@@ -59,7 +59,7 @@ namespace ET.Client
             }
             else
             {
-                await EnterGame(fuiComponent);
+                await EnterGame(clientScene);
             }
         }
         
@@ -109,19 +109,25 @@ namespace ET.Client
             else
             {
                 // 只是资源更新就直接进入游戏。
-                await EnterGame(clientScene.GetComponent<FUIComponent>());
+                await EnterGame(clientScene);
             }
         }
         
-        private static async ETTask EnterGame(FUIComponent fuiComponent)
+        private static async ETTask EnterGame(Scene clientScene)
         {
+            var fuiComponent = clientScene.GetComponent<FUIComponent>();
+            
             fuiComponent.Restart();
             
             // 打开登陆界面
-            LoginPanel_ContextData contextData = fuiComponent.AddChild<LoginPanel_ContextData>();
-            contextData.Data = "界面参数测试";
+            //LoginPanel_ContextData contextData = fuiComponent.AddChild<LoginPanel_ContextData>();
+            //contextData.Data = "界面参数测试";
             // 显示登录界面, 并传递参数contextData
-            await fuiComponent.ShowPanelAsync(PanelId.LoginPanel, contextData);
+            //await fuiComponent.ShowPanelAsync(PanelId.LoginPanel, contextData);
+
+            SceneChangeHelper.SceneChangeTo(clientScene, "Stage1").Coroutine();
+
+            await ETTask.CompletedTask;
         }
     }
 }

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 1001,
+    "Name": "甜甜圈",
+    "Desc": "蓝色的甜甜圈",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Blue"
+  }
+]

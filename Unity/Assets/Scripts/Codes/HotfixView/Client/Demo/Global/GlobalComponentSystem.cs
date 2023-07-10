@@ -12,6 +12,8 @@ namespace ET.Client
             
             self.Global = GameObject.Find("/Global").transform;
             self.Unit = GameObject.Find("/Global/Unit").transform;
+            self.Grid = GameObject.Find("/Global/Grid").transform;
+            self.Sweets = GameObject.Find("/Global/Sweets").transform;
             
             self.GRoot = GRoot.inst;
 

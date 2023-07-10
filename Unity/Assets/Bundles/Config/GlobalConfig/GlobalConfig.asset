@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CodeMode: 3
   PlayMode: 0
-  ModelVersion: 0
-  HotFixVersion: 0
+  ModelVersion: 13
+  HotFixVersion: 10

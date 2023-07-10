@@ -25,5 +25,15 @@
             // 通知等待场景切换的协程
             clientScene.GetComponent<ObjectWait>().Notify(new Wait_SceneChangeFinish());
         }
+
+        public static async ETTask SceneChangeTo(Scene clientScene, string sceneName)
+        {
+            CurrentScenesComponent currentScenesComponent = clientScene.GetComponent<CurrentScenesComponent>();
+            currentScenesComponent.Scene?.Dispose(); // 删除之前的CurrentScene，创建新的
+            Scene currentScene = SceneFactory.CreateCurrentScene(IdGenerater.Instance.GenerateInstanceId(), clientScene.Zone, sceneName, currentScenesComponent);
+            EventSystem.Instance.Publish(clientScene, new EventType.SceneChangeStart());
+
+            await ETTask.CompletedTask;
+        }
     }
 }

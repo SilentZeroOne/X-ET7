@@ -15,7 +15,7 @@ MonoBehaviour:
   ShowPackageView: 0
   EnableAddressable: 1
   UniqueBundleName: 0
-  ShowEditorAlias: 0
+  ShowEditorAlias: 1
   Packages:
   - PackageName: DefaultPackage
     PackageDesc: 
@@ -59,8 +59,8 @@ MonoBehaviour:
       AssetTags: 
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Res/Unit
-        CollectorGUID: 20054f3f410561544a8b77946c75836d
+      - CollectPath: Assets/Bundles/Unit
+        CollectorGUID: c3561f86a9d0b324680975876c94ca05
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
@@ -117,5 +117,18 @@ MonoBehaviour:
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+    - GroupName: Art
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/GameResources
+        CollectorGUID: 2f9719ddf8fe29047ae736443432293d
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectSprite
         AssetTags: 
         UserData: 

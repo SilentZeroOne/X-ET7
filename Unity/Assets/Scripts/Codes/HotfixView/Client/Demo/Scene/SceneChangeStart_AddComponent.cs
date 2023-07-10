@@ -11,7 +11,9 @@ namespace ET.Client
             
             await ResComponent.Instance.LoadSceneAsync(currentScene.Name);
             
-            currentScene.AddComponent<OperaComponent>();
+            //currentScene.AddComponent<OperaComponent>();
+            currentScene.AddComponent<SweetStageComponent, string>(currentScene.Name);
+
         }
     }
 }

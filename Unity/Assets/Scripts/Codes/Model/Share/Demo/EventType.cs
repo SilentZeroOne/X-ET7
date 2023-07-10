@@ -34,5 +34,10 @@
         {
             public Unit Unit;
         }
+        
+        public struct AfterSweetCreate
+        {
+            public GameSweet Sweet;
+        }
     }
 }
