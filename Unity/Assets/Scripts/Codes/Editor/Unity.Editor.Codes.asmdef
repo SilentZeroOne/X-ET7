@@ -9,7 +9,8 @@
         "Unity.ModelView.Codes",
         "Unity.HotfixView.Codes",
         "Unity.Editor",
-        "Unity.Loader"
+        "Unity.Loader",
+        "Unity.Mathematics"
     ],
     "includePlatforms": [
         "Editor"

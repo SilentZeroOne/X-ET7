@@ -11,5 +11,15 @@
         {
             public Unit Unit;
         }
+        
+        public struct SweetMoveStart
+        {
+            public GameSweet Sweet;
+        }
+
+        public struct SweetMoveStop
+        {
+            public GameSweet Sweet;
+        }
     }
 }

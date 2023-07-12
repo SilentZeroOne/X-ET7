@@ -6,5 +6,53 @@
     "PrefabName": "NormalSweetPrefab",
     "Type": 1,
     "SpriteName": "Blue"
+  },
+  {
+    "Id": 1002,
+    "Name": "马卡龙",
+    "Desc": "绿色的马卡龙",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Green"
+  },
+  {
+    "Id": 1003,
+    "Name": "板糖",
+    "Desc": "粉色的板糖",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Pink"
+  },
+  {
+    "Id": 1004,
+    "Name": "蛋糕",
+    "Desc": "紫色小蛋糕",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Purple"
+  },
+  {
+    "Id": 1005,
+    "Name": "大蛋糕",
+    "Desc": "红色大蛋糕",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Red"
+  },
+  {
+    "Id": 1006,
+    "Name": "提拉米苏",
+    "Desc": "黄色提拉米苏",
+    "PrefabName": "NormalSweetPrefab",
+    "Type": 1,
+    "SpriteName": "Yellow"
+  },
+  {
+    "Id": 1007,
+    "Name": "空物体",
+    "Desc": "空",
+    "PrefabName": "EmptyPrefab",
+    "Type": 0,
+    "SpriteName": ""
   }
 ]

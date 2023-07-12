@@ -12,14 +12,20 @@
     {
         protected override void Destroy(GameSweet self)
         {
-
+            self.ConfigId = 0;
+            self.ViewInited = false;
         }
     }
 
     [FriendOf(typeof (GameSweet))]
     public static class GameSweetSystem
     {
-        public static void Test(this GameSweet self)
+        public static void RegisterMonoActions(this GameSweet self)
+        {
+            
+        }
+        
+        public static void OnClick(this GameSweet self)
         {
         }
         

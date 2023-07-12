@@ -8,10 +8,24 @@ namespace ET.Client
         public static GameSweet Create(Scene currentScene, int sweetId, float2 pos)
         {
             GameSweetComponent sweetComponent = currentScene.GetComponent<GameSweetComponent>();
-            GameSweet sweet = sweetComponent.AddChild<GameSweet, int>(sweetId);
-            sweet.Position = pos;
+            GameSweet sweet = sweetComponent.Add(sweetId, pos);
+            sweet.PosInGrid = pos;
 
+            sweet.AddComponent<ObjectWait>();
+            
             EventSystem.Instance.Publish(sweet.DomainScene(), new AfterSweetCreate() { Sweet = sweet });
+            return sweet;
+        }
+        
+        public static async ETTask<GameSweet> CreateAsync(Scene currentScene, int sweetId, float2 pos)
+        {
+            GameSweetComponent sweetComponent = currentScene.GetComponent<GameSweetComponent>();
+            GameSweet sweet = sweetComponent.Add(sweetId, pos);
+            sweet.PosInGrid = pos;
+
+            sweet.AddComponent<ObjectWait>();
+            
+            await EventSystem.Instance.PublishAsync(sweet.DomainScene(), new AfterSweetCreate() { Sweet = sweet });
             return sweet;
         }
     }

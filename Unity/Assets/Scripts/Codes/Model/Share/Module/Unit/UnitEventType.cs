@@ -14,5 +14,11 @@ namespace ET
         {
             public Unit Unit;
         }
+        
+        public struct SweetChangePosition
+        {
+            public GameSweet Sweet;
+            public float2 OldPos;
+        }
     }
 }
