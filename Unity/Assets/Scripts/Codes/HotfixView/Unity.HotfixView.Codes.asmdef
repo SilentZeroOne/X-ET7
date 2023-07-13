@@ -9,7 +9,8 @@
         "Unity.ModelView.Codes",
         "Unity.Mathematics",
         "Unity.Loader",
-        "DOTween.Modules"
+        "DOTween.Modules",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [
         "Editor"

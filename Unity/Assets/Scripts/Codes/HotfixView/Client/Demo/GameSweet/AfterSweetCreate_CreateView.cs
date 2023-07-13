@@ -21,7 +21,13 @@ namespace ET.Client
 
                 if (sweet.Config.Type != (int)SweetType.Empty)
                 {
-                    sweetObj.GetComponentInChildren<SpriteRenderer>().sprite = await ResComponent.Instance.LoadAssetAsync<Sprite>(sweet.Config.SpriteName);
+                    var spriteRenderer = sweetObj.GetComponentInChildren<SpriteRenderer>();
+                    if (spriteRenderer)
+                    {
+                        spriteRenderer.sprite = await ResComponent.Instance.LoadAssetAsync<Sprite>(sweet.Config.SpriteName);
+                        sweet.AddComponent<SpriteRendererComponent>().SpriteRenderer = spriteRenderer;
+                    }
+                    
                     sweet.AddComponent<SweetMoveComponent>();
                 }
 

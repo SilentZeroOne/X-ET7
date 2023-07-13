@@ -21,7 +21,8 @@ namespace ET
             }
         }
 
-        public bool CanMoveDown => (int) this.PosInGrid.y != 5 && this.GetComponent<SweetMoveComponent>() != null; //不是最后一行就能移动
+        public bool CanMoveDown => (int) this.PosInGrid.y != 5 && this.CanMove; //不是最后一行就能移动
+        public bool CanMove => this.GetComponent<SweetMoveComponent>() != null;
 
         public bool ViewInited;
     }

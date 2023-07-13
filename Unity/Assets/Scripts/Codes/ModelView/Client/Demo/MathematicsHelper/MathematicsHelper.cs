@@ -10,6 +10,11 @@ namespace ET
             return new Vector2(pos.x, pos.y);
         }
         
+        public static int2 ToInt2(this float2 pos)
+        {
+            return new int2((int)pos.x, (int)pos.y);
+        }
+        
         public static Vector3 ToVector3(this float3 pos)
         {
             return new Vector3(pos.x, pos.y, pos.z);
