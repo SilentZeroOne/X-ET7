@@ -29,6 +29,7 @@ namespace ET.Client
                     }
                     
                     sweet.AddComponent<SweetMoveComponent>();
+                    sweet.AddComponent<AnimatorComponent>();
                 }
 
                 sweet.RealPos = SweetPosHelper.CorrectPosition(scene, sweet.PosInGrid);

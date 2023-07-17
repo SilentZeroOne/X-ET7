@@ -138,7 +138,7 @@ namespace ET
 
         private static void MoveFinish(this SweetMoveComponent self, bool ret)
         {
-            if (self.StartTime == 0)
+            if (self == null || self.IsDisposed || self.StartTime == 0)
             {
                 return;
             }

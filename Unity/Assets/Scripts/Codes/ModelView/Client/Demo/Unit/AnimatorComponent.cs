@@ -6,11 +6,10 @@ namespace ET.Client
 	public enum MotionType
 	{
 		None,
-		Idle,
-		Run,
+		Destroy
 	}
 
-	[ComponentOf(typeof(Unit))]
+	[ComponentOf()]
 	public class AnimatorComponent : Entity, IAwake, IUpdate, IDestroy
 	{
 		public Dictionary<string, AnimationClip> animationClips = new Dictionary<string, AnimationClip>();

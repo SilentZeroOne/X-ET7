@@ -8,7 +8,6 @@ namespace ET
     public class MonoActionsComponent: Entity, IAwake, IDestroy
     {
         public GameObject GameObject { get; set; }
-        public GameObject TempDragObject { get; set; }
 
         private EntityRef<GameSweet> _sweet;
 

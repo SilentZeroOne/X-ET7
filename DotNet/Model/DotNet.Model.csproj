@@ -25,6 +25,10 @@
     </PropertyGroup>
     <ItemGroup>
 
+        <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Generate\ClientServer\ConfigPartial\StageConfigCategory.cs">
+          <Link>Generate\ConfigPartial\StageConfigCategory.cs</Link>
+        </Compile>
+
         <Compile Include="..\..\Unity\Assets\Scripts\Codes\Model\Server\**\*.cs"> 
             <Link>Server\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>

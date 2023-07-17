@@ -61,10 +61,13 @@ namespace ET.Client
                 stageComponent.CurrentDragSweet = null;
             
             self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color = Color.white;
-            if (self.TempDragObject != null)
+            if (stageComponent.TempDragObject != null)
             {
-                self.TempDragObject.SetActive(false);
+                stageComponent.TempDragObject.SetActive(false);
             }
+
+            var gameSweet = self.DomainScene().GetComponent<GameSweetComponent>();
+            gameSweet?.Match();
         }
 
         private static void OnBeginDragAction(this MonoActionsComponent self, PointerEventData obj)
@@ -75,12 +78,12 @@ namespace ET.Client
             self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color = new Color(1, 1, 1, 0.4f);
             var tempObj = ResComponent.Instance.LoadAsset<GameObject>("TempSweetPrefab");
 
-            if (self.TempDragObject == null)
-                self.TempDragObject = UnityEngine.Object.Instantiate(tempObj, Vector3.zero, Quaternion.identity);
+            if (stageComponent.TempDragObject == null)
+                stageComponent.TempDragObject = UnityEngine.Object.Instantiate(tempObj, Vector3.zero, Quaternion.identity);
 
-            self.TempDragObject.SetActive(true);
+            stageComponent.TempDragObject.SetActive(true);
             
-            var spriteRender = self.TempDragObject.GetComponentInChildren<SpriteRenderer>();
+            var spriteRender = stageComponent.TempDragObject.GetComponentInChildren<SpriteRenderer>();
             if (spriteRender)
             {
                 spriteRender.sprite = ResComponent.Instance.LoadAsset<Sprite>(self.Sweet.Config.SpriteName);
@@ -96,11 +99,12 @@ namespace ET.Client
 
         private static void OnDrag(this MonoActionsComponent self, PointerEventData obj)
         {
+            var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
             //Log.Debug($"On Drag {self.Sweet.PosInGrid}");
-            if (self.TempDragObject != null)
+            if (stageComponent.TempDragObject != null)
             {
                 var pointerPos = Camera.main.ScreenToWorldPoint(Pointer.current.position.ReadValue());
-                self.TempDragObject.transform.position = new Vector3(pointerPos.x, pointerPos.y, 0);
+                stageComponent.TempDragObject.transform.position = new Vector3(pointerPos.x, pointerPos.y, 0);
             }
             
             

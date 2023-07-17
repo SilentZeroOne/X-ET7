@@ -39,5 +39,15 @@
         {
             public GameSweet Sweet;
         }
+        
+        public struct ClearSweet
+        {
+            public GameSweet Sweet;
+        }
+        
+        public struct ReFillAll
+        {
+            
+        }
     }
 }

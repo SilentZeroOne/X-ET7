@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using System;
+
+namespace ET
 {
     public class GameSweetAwakeSystem: AwakeSystem<GameSweet,int>
     {
@@ -20,13 +22,9 @@
     [FriendOf(typeof (GameSweet))]
     public static class GameSweetSystem
     {
-        public static void RegisterMonoActions(this GameSweet self)
+        public static bool IsNear(this GameSweet self, GameSweet other)
         {
-            
-        }
-        
-        public static void OnClick(this GameSweet self)
-        {
+            return Math.Abs(self.PosInGrid.x - other.PosInGrid.x)- 1 < 0.1f && Math.Abs(self.PosInGrid.y - other.PosInGrid.y) - 1 < 0.1f || self == other;
         }
         
     }
