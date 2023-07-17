@@ -49,6 +49,8 @@ namespace ET
 
         public static async ETTask<bool> MoveToAsync(this SweetMoveComponent self, int x, int y, float speed)
         {
+            if (self == null || self.IsDisposed) return false;
+            
             self.Stop(false);
             var sweet = self.GetParent<GameSweet>();
             

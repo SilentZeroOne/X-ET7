@@ -256,15 +256,17 @@ namespace ET
         {
             var combo = self.FinalMatchList.Count;
             if (combo <= 0) return;
-
+            
             var taskList = ListComponent<ETTask>.Create();
             for (int i = 0; i < combo; i++)
             {
                 foreach (var sweet in self.FinalMatchList[i])
                 {
-                    EventSystem.Instance.Publish(self.DomainScene(), new ClearSweet() { Sweet = sweet });
+                    EventSystem.Instance.PublishAsync(self.DomainScene(), new ClearSweet() { Sweet = sweet }).Coroutine();
                     taskList.Add(SweetFactory.CreateAsyncNoReturn(self.DomainScene(), 1007, sweet.PosInGrid));
                 }
+                
+                await TimerComponent.Instance.WaitAsync(200);
             }
 
             await ETTaskHelper.WaitAll(taskList);
