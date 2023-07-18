@@ -11,6 +11,7 @@ namespace ET.Client
 			UIObjectFactory.Clear();
 			
 			CommonBinder.BindAll();
+			GameBinder.BindAll();
 			HotUpdateBinder.BindAll();
 			LobbyBinder.BindAll();
 			LoginBinder.BindAll();

@@ -11,7 +11,7 @@ namespace ET.Client
         {
             var stage = currentScene.GetComponent<SweetStageComponent>();
 
-            return new float2(-stage.Config.Size.X / 2 + pos.x + 0.5f, stage.Config.Size.Y / 2 - pos.y - 0.5f);
+            return new float2(-stage.Config.Size.X / 2 + pos.x + 0.5f, stage.Config.Size.Y / 2 - pos.y - 0.5f - 2.36f);
         }
 
         public static GameSweet FindGameSweetFromPointerEvent(PointerEventData data)

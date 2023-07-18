@@ -132,3 +132,16 @@ MonoBehaviour:
         FilterRuleName: CollectSprite
         AssetTags: 
         UserData: 
+    - GroupName: Font
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/GameResources/Fonts
+        CollectorGUID: 84908c2e7df0f1941bb42c2b40f8d22b
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

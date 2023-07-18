@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920" remark="Main">
+  <controller name="setting" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n0_u0ri" name="n0" src="u0ri1" fileName="Images/Background.png" xy="-87,-61" size="1279,2026" aspect="true"/>
+    <image id="n1_u0ri" name="n1" src="u0ri2" fileName="Images/BottomBar.png" xy="-144,1605">
+      <relation target="n0_u0ri" sidePair="center-center,bottom-bottom"/>
+    </image>
+    <image id="n2_u0ri" name="n2" src="u0ri9" fileName="Images/TopBar.png" xy="-152,-59">
+      <relation target="n0_u0ri" sidePair="center-center,top-top"/>
+    </image>
+    <image id="n3_u0ri" name="n3" src="u0rib" fileName="Images/BlueBubble.png" xy="122,151"/>
+    <image id="n4_u0ri" name="n4" src="u0rid" fileName="Images/GreenBubble.png" xy="212,108"/>
+    <image id="n5_u0ri" name="n5" src="u0ric" fileName="Images/GrassGreenBubble.png" xy="311,120"/>
+    <image id="n6_u0ri" name="n6" src="u0rih" fileName="Images/YellowBubble.png" xy="423,138"/>
+    <image id="n7_u0ri" name="n7" src="u0rig" fileName="Images/PurpleBubble.png" xy="513,68"/>
+    <component id="n8_u0ri" name="StartButton" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="294,1307" size="550,270">
+      <relation target="n0_u0ri" sidePair="center-center,bottom-bottom"/>
+      <Button title="开始游戏" titleColor="#ff6666" titleFontSize="70"/>
+      <property target="image" propertyId="1" value="ui://3kf0p8qmu0rip"/>
+    </component>
+    <component id="n10_u0ri" name="SettingButton" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="845,72" size="202,202" aspect="true">
+      <relation target="n0_u0ri" sidePair="top-top"/>
+      <Button title="设置" titleColor="#ff9900" titleFontSize="41" controller="setting" page="1"/>
+      <property target="image" propertyId="1" value="ui://3kf0p8qmu0riu"/>
+    </component>
+    <component id="n12_u0ri" name="SettingPanel" src="u0riw" fileName="SettingPanel.xml" xy="108,547">
+      <gearDisplay2 controller="setting" pages="1" condition="0"/>
+    </component>
+  </displayList>
+</component>

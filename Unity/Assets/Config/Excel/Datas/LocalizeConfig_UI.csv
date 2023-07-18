@@ -1,33 +1,51 @@
-ï»¿##,key,name,TextCHS,TextCHT,TextEN
-##type,string,string,string,string,string
-##comment,,æ§ä»¶åï¼Œæ–¹ä¾¿æŸ¥æ‰¾,ç®€ä½“ä¸­æ–‡,ç¹ä½“ä¸­æ–‡,è‹±æ–‡
-##,HotUpdate/HotUpdatePanel.xml,,,,
-,2f8jqefflobh0-n0_lobh,n0,çƒ­æ›´æ–°,ç†±æ›´æ–°,HotUpdate
-##,Lobby/LobbyPanel.xml,,,,
-,ti3ka994t52l0-n2_lobh,TestABtn,æ‰“å¼€æµ‹è¯•A,æ‰“é–‹æ¸¬è©¦A,OpenTestA
-,ti3ka994t52l0-n3_lobh,EnterMap,è¿›å…¥åœ°å›¾,é€²å…¥åœ°åœ–,EnterMap
-##,Login/LoginPanel.xml,,,,
-,rgfb0w498omm0-n27_lobh,LoginBtn,è¿›å…¥åœ°å›¾,é€²å…¥åœ°åœ–,EnterMap
-##,TestA/Button1.xml,,,,
-,2kcjlx6nw6rg2-n3_w6rg,Text1,æ–‡å­—1,æ–‡å­—1,Text1
-,2kcjlx6nw6rg2-n4_w6rg,Text2,æ–‡å­—2,æ–‡å­—2,Text2
-,2kcjlx6nw6rg2-n5_w6rg,title,æ ‡é¢˜,æ¨™é¡Œ,Title
-##,TestA/TestAPanel.xml,,,,
-,2kcjlx6nlobh1-n1_lobh,n1,å¤šè¯­è¨€æµ‹è¯•,æ¸¬è©¦A,TestA
-,2kcjlx6nlobh1-n2_lobh,HideBtn,éšè—æµ‹è¯•Aç•Œé¢,"éš±è—"",""æ¸¬è©¦A,ç•Œé¢",HideTestA
-,2kcjlx6nlobh1-n0_lobh,OpenTestBBtn,æ‰“å¼€æµ‹è¯•Bç•Œé¢,æ‰“é–‹æ¸¬è©¦Bç•Œé¢,OpenTestB
-,2kcjlx6nlobh1-n7_lbin,n7,æ ‡ç­¾,æ¨™ç°½,Label
-,2kcjlx6nlobh1-n9_lbin,n9,æµ‹è¯•\næ¢è¡Œ,æ¸¬è©¦\næ›è¡Œ,Test\nLineFeed
-,2kcjlx6nlobh1-n12_lbin,n12,"""å¼•'å·"",""é€—å·ï¼Œæµ‹'è¯•""","""å¼•'è™Ÿ"",""é€—è™Ÿï¼Œæ¸¬'è©¦""","""quote"", ""comma, test"""
-,2kcjlx6nlobh1-n13_lbin,n13,åˆ¶è¡¨ç¬¦\tæµ‹è¯•,è£½è¡¨ç¬¦\tæ¸¬è©¦,Tab\tTest
-,2kcjlx6nlobh1-n14_lbin,n14,æµ‹è¯•\næ¢è¡Œ,æ¸¬è©¦\næ›è¡Œ,Test\nLineFeed
-,2kcjlx6nlobh1-n15_w6rg,n15,æŒ‰é’®,æŒ‰éˆ•,Button
-,2kcjlx6nlobh1-n15_w6rg-0,n15,é€‰ä¸­æ ‡é¢˜,é¸ä¸­æ¨™é¡Œ,Select Title
-,2kcjlx6nlobh1-n19_w6rg,n19,é€‰é¡¹2,é¸é …2,Option2
-,2kcjlx6nlobh1-n19_w6rg-0,n19,é€‰ä¸­é€‰é¡¹2,é¸ä¸­é¸é …2,Select Option2
-,2kcjlx6nlobh1-n18_w6rg,n18,é€‰é¡¹1,é¸é …1,Option1
-,2kcjlx6nlobh1-n18_w6rg-0,n18,é€‰ä¸­é€‰é¡¹1,é¸ä¸­é¸é …1,Select Option1
-,2kcjlx6nlobh1-n23_w6rg,n23,å¯Œæ–‡æœ¬,å¯Œæ–‡æœ¬ç¹é«”,RichText
-##,TestB/TestBPanel.xml,,,,
-,296l7tjhlobh0-n0_lobh,n0,æµ‹è¯•B,æ¸¬è©¦B,TestB
-,296l7tjhlobh0-n1_lobh,CloseBtn,å…³é—­æµ‹è¯•Bç•Œé¢,é—œé–‰æ¸¬è©¦Bç•Œé¢,CloseTestB
+##	key	name	TextCHS	TextCHT	TextEN
+##type	string	string	string	string	string
+##comment		¿Ø¼şÃû£¬·½±ã²éÕÒ	¼òÌåÖĞÎÄ	·±ÌåÖĞÎÄ	Ó¢ÎÄ
+##	Common/Components/TwoComponent.xml				
+	f2boiu4iw6rg3-n0_w6rg	title	µÚ¶ş¸ö×é¼ş		
+	f2boiu4iw6rg3-n4_w6rg	OneBtn	°´Å¥		
+##	Game/GamePanel.xml				
+	3kf0p8qmu0ri0-n8_u0ri	StartButton	¿ªÊ¼ÓÎÏ·	é_Ê¼ß[‘ò	Start Game
+	3kf0p8qmu0ri0-n10_u0ri	SettingButton	ÉèÖÃ	ÔOÖÃ	Setting
+##	Game/SettingPanel.xml				
+	3kf0p8qmu0riw-n14_u0ri	n14	ÓïÑÔ	ÕZÑÔ	Language
+##	HotUpdate/HotUpdatePanel.xml				
+	2f8jqefflobh0-n0_lobh	n0	ÈÈ¸üĞÂ	Ÿá¸üĞÂ	HotUpdate
+##	Lobby/LobbyPanel.xml				
+	ti3ka994t52l0-n2_lobh	TestABtn	´ò¿ª²âÊÔA	´òé_œyÔ‡A	OpenTestA
+	ti3ka994t52l0-n3_lobh	EnterMap	½øÈëµØÍ¼	ßMÈëµØˆD	EnterMap
+##	Login/LoginPanel.xml				
+	rgfb0w498omm0-n27_lobh	LoginBtn	½øÈëµØÍ¼	ßMÈëµØˆD	EnterMap
+##	TestA/Button1.xml				
+	2kcjlx6nw6rg2-n3_w6rg	Text1	ÎÄ×Ö1	ÎÄ×Ö1	Text1
+	2kcjlx6nw6rg2-n4_w6rg	Text2	ÎÄ×Ö2	ÎÄ×Ö2	Text2
+	2kcjlx6nw6rg2-n5_w6rg	title	±êÌâ	˜Ëî}	Title
+##	TestA/TestAPanel.xml				
+	2kcjlx6nlobh1-n1_lobh	n1	¶àÓïÑÔ²âÊÔ	œyÔ‡A	TestA
+	2kcjlx6nlobh1-n2_lobh	HideBtn	Òş²Ø²âÊÔA½çÃæ	"ë[²Ø"",""œyÔ‡A,½çÃæ"	HideTestA
+	2kcjlx6nlobh1-n0_lobh	OpenTestBBtn	´ò¿ª²âÊÔB½çÃæ	´òé_œyÔ‡B½çÃæ	OpenTestB
+	2kcjlx6nlobh1-n7_lbin	n7	±êÇ©	˜Ëº	Label
+	2kcjlx6nlobh1-n9_lbin	n9	²âÊÔ\r\n»»ĞĞ	œyÔ‡\n“QĞĞ	Test\nLineFeed
+	2kcjlx6nlobh1-n12_lbin	n12	"""Òı'ºÅ"",""¶ººÅ£¬²â'ÊÔ"""	"""Òı'Ì–"",""¶ºÌ–£¬œy'Ô‡"""	"""quote"", ""comma, test"""
+	2kcjlx6nlobh1-n13_lbin	n13	ÖÆ±í·û\t²âÊÔ	Ñu±í·û\tœyÔ‡	Tab\tTest
+	2kcjlx6nlobh1-n14_lbin	n14	²âÊÔ\n»»ĞĞ	œyÔ‡\n“QĞĞ	Test\nLineFeed
+	2kcjlx6nlobh1-n15_w6rg	n15	°´Å¥	°´âo	Button
+	2kcjlx6nlobh1-n15_w6rg-0	n15	Ñ¡ÖĞ±êÌâ	ßxÖĞ˜Ëî}	Select Title
+	2kcjlx6nlobh1-n19_w6rg	n19	Ñ¡Ïî2	ßxí—2	Option2
+	2kcjlx6nlobh1-n19_w6rg-0	n19	Ñ¡ÖĞÑ¡Ïî2	ßxÖĞßxí—2	Select Option2
+	2kcjlx6nlobh1-n18_w6rg	n18	Ñ¡Ïî1	ßxí—1	Option1
+	2kcjlx6nlobh1-n18_w6rg-0	n18	Ñ¡ÖĞÑ¡Ïî1	ßxÖĞßxí—1	Select Option1
+	2kcjlx6nlobh1-n23_w6rg	n23	¸»ÎÄ±¾	¸»ÎÄ±¾·±ów	RichText
+##	TestB/Components/Button1.xml				
+	296l7tjhw6rg2-n3_w6rg	n3	°´Å¥		
+##	TestB/Components/OneComponent.xml				
+	296l7tjhw6rg1-n0_w6rg	title	Ò»¸ö×é¼ş		
+##	TestB/TestBPanel.xml				
+	296l7tjhlobh0-n0_lobh	n0	²âÊÔB	œyÔ‡B	TestB
+	296l7tjhlobh0-n1_lobh	CloseBtn	¹Ø±Õ²âÊÔB½çÃæ	êPé]œyÔ‡B½çÃæ	CloseTestB
+	296l7tjhlobh0-n5_khvd	OpenTestCBtn	´ò¿ª²âÊÔC½çÃæ		
+##	TestB/TestCPanel.xml				
+	296l7tjhkhvd3-n0_lobh	n0	²âÊÔC		
+	296l7tjhkhvd3-n1_lobh	CloseBtn	¹Ø±Õ²âÊÔC½çÃæ		
+	296l7tjhkhvd3-n5_nt9r	n5	´úÂëÀïÉèÖÃLoader.urlÊ±£¬Èç¹ûÃ»ÓĞ¼ÓÔØUIPackage£¬Ôòµ÷ÓÃÍ¬²½½Ó¿Ú¼ÓÔØ¡£		
+	296l7tjhkhvd3-n7_jko3	n7	ÒıÓÃÁËIcon3°üÀïµÄ×é¼ş£¬\n¸Ã×é¼şÒıÓÃÁËIcon4°üÀïµÄÍ¼Æ¬¡£		

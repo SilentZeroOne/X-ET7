@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="3kf0p8qm">
+  <resources>
+    <component id="u0ri0" name="GamePanel.xml" path="/" exported="true"/>
+    <image id="u0ri1" name="Background.png" path="/Images/"/>
+    <image id="u0ri2" name="BottomBar.png" path="/Images/"/>
+    <image id="u0ri3" name="ChocoBackground.png" path="/Images/"/>
+    <image id="u0ri4" name="Hand.png" path="/Images/"/>
+    <image id="u0ri5" name="PinkButton.png" path="/Images/"/>
+    <image id="u0ri6" name="Repeat.png" path="/Images/"/>
+    <image id="u0ri7" name="SpiralShadow.png" path="/Images/"/>
+    <image id="u0ri8" name="SquareLight.png" path="/Images/"/>
+    <image id="u0ri9" name="TopBar.png" path="/Images/"/>
+    <image id="u0ria" name="TopInfoBox.png" path="/Images/"/>
+    <image id="u0rib" name="BlueBubble.png" path="/Images/"/>
+    <image id="u0ric" name="GrassGreenBubble.png" path="/Images/"/>
+    <image id="u0rid" name="GreenBubble.png" path="/Images/"/>
+    <image id="u0rie" name="OrangeBubble.png" path="/Images/"/>
+    <image id="u0rif" name="PinkBubble.png" path="/Images/"/>
+    <image id="u0rig" name="PurpleBubble.png" path="/Images/"/>
+    <image id="u0rih" name="YellowBubble.png" path="/Images/"/>
+    <image id="u0rii" name="ChocoSticks.png" path="/Images/"/>
+    <image id="u0rij" name="Close.png" path="/Images/"/>
+    <image id="u0rik" name="PlayGamePopupCream.png" path="/Images/"/>
+    <image id="u0ril" name="BreadBody.png" path="/Images/"/>
+    <image id="u0rim" name="BreadEyes.png" path="/Images/"/>
+    <image id="u0rin" name="GreyBasic.png" path="/Images/"/>
+    <image id="u0rio" name="HeartButton.png" path="/Images/"/>
+    <image id="u0rip" name="PinkBasic.png" path="/Images/"/>
+    <image id="u0riq" name="PlayButton.png" path="/Images/"/>
+    <image id="u0rir" name="String.png" path="/Images/"/>
+    <image id="u0ris" name="SweetCream.png" path="/Images/"/>
+    <image id="u0rit" name="SweetHome.png" path="/Images/"/>
+    <image id="u0riu" name="WhiteBlackCream.png" path="/Images/"/>
+    <font id="u0riv" name="FZCuYuan-M03.ttf" path="/" renderMode="sdfaa" samplePointSize="60"/>
+    <component id="u0riw" name="SettingPanel.xml" path="/" exported="true"/>
+  </resources>
+  <publish name="" path="../Unity/Assets/Bundles/FUI/Game" packageCount="2"/>
+</packageDescription>

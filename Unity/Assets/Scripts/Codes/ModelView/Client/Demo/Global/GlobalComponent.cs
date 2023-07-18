@@ -13,6 +13,7 @@ namespace ET.Client
         public Transform Unit { get; set; }
         public Transform Grid { get; set; }
         public Transform Sweets {get; set; }
+        public Camera MainCamera { get; set; }
         
         public GComponent GRoot{ get; set; }
         public GComponent NormalGRoot{ get; set; }

@@ -9,6 +9,7 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent3 args)
         {
             Root.Instance.Scene.AddComponent<GlobalComponent>();
+            Root.Instance.Scene.AddComponent<ScreenDetectComponent>();
             
             Root.Instance.Scene.AddComponent<FsmDispatcherComponent>();
 
@@ -120,12 +121,12 @@ namespace ET.Client
             fuiComponent.Restart();
             
             // 打开登陆界面
-            //LoginPanel_ContextData contextData = fuiComponent.AddChild<LoginPanel_ContextData>();
-            //contextData.Data = "界面参数测试";
+            // LoginPanel_ContextData contextData = fuiComponent.AddChild<LoginPanel_ContextData>();
+            // contextData.Data = "界面参数测试";
             // 显示登录界面, 并传递参数contextData
             //await fuiComponent.ShowPanelAsync(PanelId.LoginPanel, contextData);
-
-            SceneChangeHelper.SceneChangeTo(clientScene, "Stage1").Coroutine();
+            
+            await fuiComponent.ShowPanelAsync(PanelId.GamePanel);
 
             await ETTask.CompletedTask;
         }

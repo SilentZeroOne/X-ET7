@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using FairyGUI;
 using FairyGUI.Dynamic;
+using TMPro;
 using UnityEngine;
 
 namespace ET.Client
@@ -32,6 +33,11 @@ namespace ET.Client
     {
         public static void Awake(this FUIComponent self)
         {
+            TMPFont font = new TMPFont();
+            font.name = "FZCuYuan-M03";
+            font.fontAsset = ResComponent.Instance.LoadAsset<TMP_FontAsset>("FZCuYuan-M03 SDF");
+            FontManager.RegisterFont(font);
+            
             self.AllPanelsDic?.Clear();
             self.VisiblePanelsDic?.Clear();
             self.VisiblePanelsQueue?.Clear();

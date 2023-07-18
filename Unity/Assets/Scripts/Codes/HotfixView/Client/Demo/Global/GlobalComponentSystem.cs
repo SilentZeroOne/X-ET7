@@ -14,6 +14,7 @@ namespace ET.Client
             self.Unit = GameObject.Find("/Global/Unit").transform;
             self.Grid = GameObject.Find("/Global/Grid").transform;
             self.Sweets = GameObject.Find("/Global/Sweets").transform;
+            self.MainCamera = GameObject.Find("/Global/MainCamera").GetComponent<Camera>();
             
             self.GRoot = GRoot.inst;
 

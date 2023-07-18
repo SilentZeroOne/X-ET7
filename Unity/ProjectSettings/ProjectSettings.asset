@@ -852,7 +852,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: UNITY;SINGLE_THREAD
     Server: UNITY
-    Standalone: UNITY;SINGLE_THREAD;ENABLE_VIEW;ENABLE_CODES
+    Standalone: UNITY;SINGLE_THREAD;ENABLE_VIEW;ENABLE_CODES;FAIRYGUI_TMPRO
     WebGL: UNITY
     iPhone: UNITY;SINGLE_THREAD
   additionalCompilerArguments: {}

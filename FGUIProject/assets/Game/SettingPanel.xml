@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="868,516">
+  <controller name="setting" pages="0,,1," selected="0"/>
+  <displayList>
+    <image id="n12_u0ri" name="n12" src="ab9e4" fileName="Images/Button.png" pkg="f2boiu4i" xy="0,0" size="868,516">
+      <gearDisplay2 controller="setting" pages="1" condition="0"/>
+    </image>
+    <image id="n13_u0ri" name="n13" src="ab9e4" fileName="Images/Button.png" pkg="f2boiu4i" xy="3,-6" size="867,520"/>
+    <component id="n14_u0ri" name="LanguageText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="75,29" size="264,96">
+      <Label title="语言" titleColor="#ff9900" titleFontSize="49"/>
+    </component>
+    <component id="n15_u0ri" name="LanguageCombo" src="ab9ej" fileName="Components/ComboBox1.xml" pkg="f2boiu4i" xy="341,32">
+      <relation target="n14_u0ri" sidePair="right-left"/>
+      <ComboBox visibleItemCount="10"/>
+    </component>
+  </displayList>
+</component>

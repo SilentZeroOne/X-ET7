@@ -1,4 +1,6 @@
-﻿namespace ET
+﻿using Unity.Mathematics;
+
+namespace ET
 {
     namespace EventType
     {
@@ -48,6 +50,11 @@
         public struct ReFillAll
         {
             
+        }
+
+        public struct ScreenResolutionChange
+        {
+            public int2 Resolution;
         }
     }
 }

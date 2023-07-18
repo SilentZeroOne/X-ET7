@@ -1,5 +1,25 @@
 [
   {
+    "key": "f2boiu4iw6rg3-n0_w6rg",
+    "TextCHS": "第二个组件"
+  },
+  {
+    "key": "f2boiu4iw6rg3-n4_w6rg",
+    "TextCHS": "按钮"
+  },
+  {
+    "key": "3kf0p8qmu0ri0-n8_u0ri",
+    "TextCHS": "开始游戏"
+  },
+  {
+    "key": "3kf0p8qmu0ri0-n10_u0ri",
+    "TextCHS": "设置"
+  },
+  {
+    "key": "3kf0p8qmu0riw-n14_u0ri",
+    "TextCHS": "语言"
+  },
+  {
     "key": "2f8jqefflobh0-n0_lobh",
     "TextCHS": "热更新"
   },
@@ -45,7 +65,7 @@
   },
   {
     "key": "2kcjlx6nlobh1-n9_lbin",
-    "TextCHS": "测试\\n换行"
+    "TextCHS": "测试\\r\\n换行"
   },
   {
     "key": "2kcjlx6nlobh1-n12_lbin",
@@ -88,11 +108,39 @@
     "TextCHS": "富文本"
   },
   {
+    "key": "296l7tjhw6rg2-n3_w6rg",
+    "TextCHS": "按钮"
+  },
+  {
+    "key": "296l7tjhw6rg1-n0_w6rg",
+    "TextCHS": "一个组件"
+  },
+  {
     "key": "296l7tjhlobh0-n0_lobh",
     "TextCHS": "测试B"
   },
   {
     "key": "296l7tjhlobh0-n1_lobh",
     "TextCHS": "关闭测试B界面"
+  },
+  {
+    "key": "296l7tjhlobh0-n5_khvd",
+    "TextCHS": "打开测试C界面"
+  },
+  {
+    "key": "296l7tjhkhvd3-n0_lobh",
+    "TextCHS": "测试C"
+  },
+  {
+    "key": "296l7tjhkhvd3-n1_lobh",
+    "TextCHS": "关闭测试C界面"
+  },
+  {
+    "key": "296l7tjhkhvd3-n5_nt9r",
+    "TextCHS": "代码里设置Loader.url时，如果没有加载UIPackage，则调用同步接口加载。"
+  },
+  {
+    "key": "296l7tjhkhvd3-n7_jko3",
+    "TextCHS": "引用了Icon3包里的组件，\\n该组件引用了Icon4包里的图片。"
   }
 ]
