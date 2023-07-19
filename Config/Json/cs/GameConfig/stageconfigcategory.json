@@ -6,6 +6,9 @@
     "Size": {
       "x": 6,
       "y": 6
-    }
+    },
+    "Turn": 10,
+    "TargetScore": 8000,
+    "HoldTime": 20
   }
 ]

@@ -35,6 +35,7 @@ namespace ET
 
         public static void Match(this GameSweetComponent self)
         {
+            EventSystem.Instance.Publish(self.DomainScene(), new StageStartMatch() { StartMatch = true });
             self.AddedMatchIndex.Clear();
 
             var config = StageConfigCategory.Instance.GetByName(self.DomainScene().Name);
@@ -255,7 +256,13 @@ namespace ET
         public static async ETTask ClearMatchedSweets(this GameSweetComponent self)
         {
             var combo = self.FinalMatchList.Count;
-            if (combo <= 0) return;
+            
+            if (combo <= 0)
+            {
+                EventSystem.Instance.Publish(self.DomainScene(), new StageStartMatch() { StartMatch = false });
+                self.Combo = 0;
+                return;
+            }
             
             var taskList = ListComponent<ETTask>.Create();
             for (int i = 0; i < combo; i++)
@@ -265,13 +272,16 @@ namespace ET
                     EventSystem.Instance.PublishAsync(self.DomainScene(), new ClearSweet() { Sweet = sweet }).Coroutine();
                     taskList.Add(SweetFactory.CreateAsyncNoReturn(self.DomainScene(), 1007, sweet.PosInGrid));
                 }
+
+                EventSystem.Instance.PublishAsync(self.DomainScene(),
+                    new Combo() { ComboCount = self.Combo + i + 1, CurrentClearSweetCount = self.FinalMatchList[i].Count }).Coroutine();
                 
                 await TimerComponent.Instance.WaitAsync(200);
             }
-
+            self.Combo += combo;
             await ETTaskHelper.WaitAll(taskList);
 
-            await TimerComponent.Instance.WaitAsync(1100);
+            await TimerComponent.Instance.WaitAsync(1100);//等待Sweet消失的动画
             
             await EventSystem.Instance.PublishAsync(self.DomainScene(), new ReFillAll());
             

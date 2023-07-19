@@ -18,6 +18,7 @@
     <component id="lbinv" name="ProgressBar1.xml" path="/Components/" exported="true"/>
     <component id="w6rg3" name="TwoComponent.xml" path="/Components/" exported="true"/>
     <component id="u0riw" name="MultiBtn.xml" path="/Components/" exported="true"/>
+    <component id="u0rix" name="ProgressBar2.xml" path="/Components/" exported="true"/>
   </resources>
   <publish name="" path="../Unity/Assets/Bundles/FUI/Common" packageCount="2"/>
 </packageDescription>

@@ -9,6 +9,7 @@ namespace ET.Client
 		HotUpdatePanel,
 		LobbyPanel,
 		LoginPanel,
+		StagePanel,
 		TestAPanel,
 		TestBPanel,
 		TestCPanel,

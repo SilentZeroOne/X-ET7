@@ -10,5 +10,7 @@ namespace ET
         public Dictionary<int,int> AddedMatchIndex = new();
 
         public List<HashSet<GameSweet>> FinalMatchList = new();
+
+        public int Combo { get; set; }
     }
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1080,1920" designImage="ui://3m1vqahlu0ri5" designImageForTest="true" remark="Main">
+  <displayList>
+    <image id="n0_u0ri" name="n0" src="u0ria" fileName="TopInfoBox.png" xy="259,0">
+      <relation target="" sidePair="center-center,top-top"/>
+    </image>
+    <image id="n1_u0ri" name="n1" src="u0ri7" fileName="SpiralShadow.png" xy="19,157">
+      <relation target="" sidePair="left-left,top-top"/>
+    </image>
+    <image id="n2_u0ri" name="n2" src="u0ri3" fileName="ChocoBackground.png" xy="35,171" size="164,164" aspect="true">
+      <relation target="n1_u0ri" sidePair="center-center,middle-middle"/>
+    </image>
+    <component id="n3_u0ri" name="ScoreText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="322,25" size="446,109">
+      <relation target="n0_u0ri" sidePair="center-center,middle-middle"/>
+      <Label title="9999999" titleColor="#ff9900" titleFontSize="53"/>
+    </component>
+    <component id="n4_u0ri" name="StepCountText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="38,177" size="160,160">
+      <relation target="n2_u0ri" sidePair="center-center,middle-middle"/>
+      <Label title="60" titleColor="#ff9900" titleFontSize="70"/>
+    </component>
+    <component id="n6_u0ri" name="TimeSlider" src="u0rix" fileName="Components/ProgressBar2.xml" pkg="f2boiu4i" xy="5,760" size="1070,77">
+      <relation target="" sidePair="center-center"/>
+      <ProgressBar value="100" max="100"/>
+    </component>
+  </displayList>
+</component>

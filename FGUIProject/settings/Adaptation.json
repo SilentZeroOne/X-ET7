@@ -3,6 +3,12 @@
   "screenMathMode": "MatchWidthOrHeight",
   "designResolutionX": 1080,
   "designResolutionY": 1920,
-  "devices": [],
+  "devices": [
+    {
+      "name": "Mi 11",
+      "resolutionX": 3200,
+      "resolutionY": 1440
+    }
+  ],
   "fileName": "Adaptation"
 }

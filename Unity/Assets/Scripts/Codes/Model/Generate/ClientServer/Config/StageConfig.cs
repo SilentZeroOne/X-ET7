@@ -20,6 +20,9 @@ public sealed partial class StageConfig: Bright.Config.BeanBase
         Name = _buf.ReadString();
         Desc = _buf.ReadString();
         Size = _buf.ReadVector2();
+        Turn = _buf.ReadInt();
+        TargetScore = _buf.ReadLong();
+        HoldTime = _buf.ReadInt();
         PostInit();
     }
 
@@ -44,6 +47,18 @@ public sealed partial class StageConfig: Bright.Config.BeanBase
     /// 长宽
     /// </summary>
     public System.Numerics.Vector2 Size { get; private set; }
+    /// <summary>
+    /// 回合数
+    /// </summary>
+    public int Turn { get; private set; }
+    /// <summary>
+    /// 目标分数
+    /// </summary>
+    public long TargetScore { get; private set; }
+    /// <summary>
+    /// 旋转时间
+    /// </summary>
+    public int HoldTime { get; private set; }
 
     public const int __ID__ = 1215177664;
     public override int GetTypeId() => __ID__;
@@ -64,6 +79,9 @@ public sealed partial class StageConfig: Bright.Config.BeanBase
         + "Name:" + Name + ","
         + "Desc:" + Desc + ","
         + "Size:" + Size + ","
+        + "Turn:" + Turn + ","
+        + "TargetScore:" + TargetScore + ","
+        + "HoldTime:" + HoldTime + ","
         + "}";
     }
     

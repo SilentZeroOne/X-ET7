@@ -15,6 +15,7 @@ namespace ET.Client
 			HotUpdateBinder.BindAll();
 			LobbyBinder.BindAll();
 			LoginBinder.BindAll();
+			StageBinder.BindAll();
 			TestABinder.BindAll();
 			TestBBinder.BindAll();
 		}

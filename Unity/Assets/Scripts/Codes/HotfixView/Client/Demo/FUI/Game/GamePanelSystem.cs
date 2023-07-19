@@ -51,6 +51,7 @@ namespace ET.Client
 			await SceneChangeHelper.SceneChangeTo(self.DomainScene(), "Stage1");
 
 			self.DomainScene().GetComponent<FUIComponent>().HidePanel(PanelId.GamePanel);
+			self.DomainScene().GetComponent<FUIComponent>().ShowPanelAsync(PanelId.StagePanel).Coroutine();
 		}
 
 		public static void SettingBtnOnClick(this GamePanel self)

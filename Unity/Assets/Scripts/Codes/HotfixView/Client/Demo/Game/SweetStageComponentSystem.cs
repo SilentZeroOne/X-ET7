@@ -26,6 +26,7 @@ namespace ET.Client
         {
             self.Config = StageConfigCategory.Instance.GetByName(name);
             self.FillSpeed = 6f;
+            self.CurrentTurn = self.Config.Turn;
 
             self.InitGrid();
             self.AllFill().Coroutine();
@@ -52,6 +53,7 @@ namespace ET.Client
 
         public static async ETTask AllFill(this SweetStageComponent self)
         {
+            self.CanOperate = false;
             var count = 0;
             while (await self.FillSweet())
             {
@@ -59,6 +61,7 @@ namespace ET.Client
                 await TimerComponent.Instance.WaitAsync(150);
             }
 
+            self.CanOperate = true;
             await ETTask.CompletedTask;
         }
 

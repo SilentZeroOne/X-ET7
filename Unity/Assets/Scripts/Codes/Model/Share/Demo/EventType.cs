@@ -56,5 +56,26 @@ namespace ET
         {
             public int2 Resolution;
         }
+
+        public struct StageCanOperate
+        {
+            public bool CanOperate;
+        }
+        
+        public struct StageStartMatch
+        {
+            public bool StartMatch;
+        }
+
+        public struct Combo
+        {
+            public int ComboCount;
+            public int CurrentClearSweetCount;
+        }
+        
+        public struct CurrentTurnChange
+        {
+            public int CurrentTurn;
+        }
     }
 }

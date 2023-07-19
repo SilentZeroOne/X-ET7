@@ -15,6 +15,7 @@ namespace ET.Client
 			UIObjectFactory.SetPackageItemExtension(ET.Client.Common.FUI_ProgressBar1.URL, typeof(ET.Client.Common.FUI_ProgressBar1));
 			UIObjectFactory.SetPackageItemExtension(ET.Client.Common.FUI_TwoComponent.URL, typeof(ET.Client.Common.FUI_TwoComponent));
 			UIObjectFactory.SetPackageItemExtension(ET.Client.Common.FUI_MultiBtn.URL, typeof(ET.Client.Common.FUI_MultiBtn));
+			UIObjectFactory.SetPackageItemExtension(ET.Client.Common.FUI_ProgressBar2.URL, typeof(ET.Client.Common.FUI_ProgressBar2));
 		}
 	}
 }

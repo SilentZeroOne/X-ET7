@@ -4,14 +4,11 @@
     <component id="u0ri0" name="GamePanel.xml" path="/" exported="true"/>
     <image id="u0ri1" name="Background.png" path="/Images/"/>
     <image id="u0ri2" name="BottomBar.png" path="/Images/"/>
-    <image id="u0ri3" name="ChocoBackground.png" path="/Images/"/>
     <image id="u0ri4" name="Hand.png" path="/Images/"/>
     <image id="u0ri5" name="PinkButton.png" path="/Images/"/>
     <image id="u0ri6" name="Repeat.png" path="/Images/"/>
-    <image id="u0ri7" name="SpiralShadow.png" path="/Images/"/>
     <image id="u0ri8" name="SquareLight.png" path="/Images/"/>
     <image id="u0ri9" name="TopBar.png" path="/Images/"/>
-    <image id="u0ria" name="TopInfoBox.png" path="/Images/"/>
     <image id="u0rib" name="BlueBubble.png" path="/Images/"/>
     <image id="u0ric" name="GrassGreenBubble.png" path="/Images/"/>
     <image id="u0rid" name="GreenBubble.png" path="/Images/"/>
