@@ -116,6 +116,8 @@ namespace ET.Client
 
 		public static void Play(this AnimatorComponent self, MotionType motionType, float motionSpeed = 1f)
 		{
+			if (self == null) return;
+			
 			if (!self.HasParameter(motionType.ToString()))
 			{
 				return;

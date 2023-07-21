@@ -14,5 +14,6 @@
         public const int AITimer = 202;
         public const int SessionAcceptTimeout = 203;
         public const int SweetMoveTimer = 204;
+        public const int SweetDragTimer = 205;
     }
 }

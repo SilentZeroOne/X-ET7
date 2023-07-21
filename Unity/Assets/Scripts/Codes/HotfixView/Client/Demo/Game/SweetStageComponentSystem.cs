@@ -27,6 +27,7 @@ namespace ET.Client
             self.Config = StageConfigCategory.Instance.GetByName(name);
             self.FillSpeed = 6f;
             self.CurrentTurn = self.Config.Turn;
+            self.CurrentDragTime = self.Config.HoldTime;
 
             self.InitGrid();
             self.AllFill().Coroutine();

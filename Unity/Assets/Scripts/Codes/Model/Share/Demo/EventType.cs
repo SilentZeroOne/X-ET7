@@ -77,5 +77,10 @@ namespace ET
         {
             public int CurrentTurn;
         }
+        
+        public struct CurrentDragTimeChange
+        {
+            public int CurrentDragTime;
+        }
     }
 }

@@ -5,6 +5,18 @@ using UnityEngine.InputSystem;
 
 namespace ET.Client
 {
+    [FriendOf(typeof (MonoActionsComponent))]
+    [Invoke(TimerInvokeType.SweetDragTimer)]
+    public class MonoActionsComponentTimer: ATimer<MonoActionsComponent>
+    {
+        protected override void Run(MonoActionsComponent self)
+        {
+            var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
+            stageComponent.CurrentDragTime--;
+            if (stageComponent.CurrentDragTime == 0) self.EndDrag();
+        }
+    }
+    
     public class MonoActionsComponentAwakeSystem: AwakeSystem<MonoActionsComponent>
     {
         protected override void Awake(MonoActionsComponent self)
@@ -20,6 +32,7 @@ namespace ET.Client
         }
     }
     [FriendOfAttribute(typeof(ET.Client.AnimatorComponent))]
+    [FriendOfAttribute(typeof(ET.MonoActionsComponent))]
     public static class MonoActionsComponentSystem
     {
         public static void RegisterActions(this MonoActionsComponent self)
@@ -57,11 +70,19 @@ namespace ET.Client
             }
         }
 
+        public static void EndDrag(this MonoActionsComponent self)
+        {
+            self.OnEndDragAction(null);
+        }
+        
         private static void OnEndDragAction(this MonoActionsComponent self, PointerEventData obj)
         {
             var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
-            if (!stageComponent.CanOperate) return;
+            //if (!stageComponent.CanOperate) return;
 
+            TimerComponent.Instance.Remove(ref self.DragTimer);
+            stageComponent.CurrentDragTime = stageComponent.Config.HoldTime;
+            
             if (stageComponent.CurrentDragSweet != null)
                 stageComponent.CurrentDragSweet = null;
 
@@ -83,6 +104,8 @@ namespace ET.Client
         {
             var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
             if (!stageComponent.CanOperate) return;
+
+            self.DragTimer = TimerComponent.Instance.NewRepeatedTimer(1000, TimerInvokeType.SweetDragTimer, self);
 
             stageComponent.CurrentDragSweet = self.Sweet;
             self.Sweet.GetComponent<AnimatorComponent>().Animator.enabled = false;

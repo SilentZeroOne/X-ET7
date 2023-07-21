@@ -19,5 +19,7 @@ namespace ET
                 this._sweet = value;
             }
         }
+
+        public long DragTimer;
     }
 }

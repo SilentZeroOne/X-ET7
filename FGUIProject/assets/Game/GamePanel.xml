@@ -3,13 +3,13 @@
   <controller name="setting" pages="0,,1," selected="0"/>
   <displayList>
     <image id="n0_u0ri" name="n0" src="u0ri1" fileName="Images/Background.png" xy="-105,-288" size="1279,2489">
-      <relation target="" sidePair="center-center,middle-middle"/>
+      <relation target="" sidePair="width-width,height-height"/>
     </image>
     <image id="n1_u0ri" name="n1" src="u0ri2" fileName="Images/BottomBar.png" xy="-174,1726">
-      <relation target="" sidePair="bottom-bottom"/>
+      <relation target="" sidePair="width-width,bottom-bottom"/>
     </image>
     <image id="n2_u0ri" name="n2" src="u0ri9" fileName="Images/TopBar.png" xy="-210,-94">
-      <relation target="" sidePair="top-top"/>
+      <relation target="" sidePair="width-width,top-top"/>
     </image>
     <image id="n3_u0ri" name="n3" src="u0rib" fileName="Images/BlueBubble.png" xy="67,124"/>
     <image id="n4_u0ri" name="n4" src="u0rid" fileName="Images/GreenBubble.png" xy="145,84"/>
@@ -22,7 +22,7 @@
       <property target="image" propertyId="1" value="ui://3kf0p8qmu0rip"/>
     </component>
     <component id="n10_u0ri" name="SettingButton" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="827,10" size="202,202" aspect="true">
-      <relation target="n0_u0ri" sidePair="top-top"/>
+      <relation target="n0_u0ri" sidePair="right-right,top-top"/>
       <Button title="设置" titleColor="#ff9900" titleFontSize="41" controller="setting" page="1"/>
       <property target="image" propertyId="1" value="ui://3kf0p8qmu0riu"/>
     </component>

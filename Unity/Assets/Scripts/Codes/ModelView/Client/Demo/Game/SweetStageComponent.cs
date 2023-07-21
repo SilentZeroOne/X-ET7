@@ -9,13 +9,13 @@ namespace ET
         public StageConfig Config { get; set; }
         public float FillSpeed { get; set; }
 
-        private int _curremtTurn;
+        private int _currentTurn;
         public int CurrentTurn
         {
-            get => this._curremtTurn;
+            get => this._currentTurn;
             set
             {
-                this._curremtTurn = value;
+                this._currentTurn = value;
                 EventSystem.Instance.Publish(this.DomainScene(), new CurrentTurnChange() { CurrentTurn = value });
             } 
         }
@@ -34,11 +34,22 @@ namespace ET
 
         public bool CanOperate
         {
-            get => this._canOperate;
+            get => this._canOperate && this._currentTurn > 0 && this._currentDragTime > 0;
             set
             {
                 this._canOperate = value;
                 EventSystem.Instance.Publish(this.DomainScene(), new StageCanOperate() { CanOperate = value });
+            }
+        }
+        
+        private int _currentDragTime;
+        public int CurrentDragTime
+        {
+            get => this._currentDragTime;
+            set
+            {
+                this._currentDragTime = value;
+                EventSystem.Instance.Publish(this.DomainScene(), new CurrentDragTimeChange() { CurrentDragTime = value });
             }
         }
     }

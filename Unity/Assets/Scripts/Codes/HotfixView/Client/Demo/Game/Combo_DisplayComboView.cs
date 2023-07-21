@@ -12,7 +12,7 @@ namespace ET.Client
             await TimerComponent.Instance.WaitAsync(1100);
             
             var oldScore = scene.GetComponent<NumericComponent>().GetAsLong(NumericType.CurrentScore);
-            long score = oldScore + (long)math.floor((1 + (a.ComboCount * 0.1f)) * (a.CurrentClearSweetCount * 100));
+            long score = oldScore + (long) math.floor((1 + ((a.ComboCount - 1) * 0.1f)) * (a.CurrentClearSweetCount * 100));
             scene.GetComponent<NumericComponent>().Set(NumericType.CurrentScore, score);
             
             scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>().SetScore(score);

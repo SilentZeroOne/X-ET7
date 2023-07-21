@@ -16,7 +16,10 @@ namespace ET.Client
 
 		public static void OnShow(this StagePanel self, Entity contextData = null)
 		{
-			self.SetTurn(StageConfigCategory.Instance.GetByName(self.DomainScene().CurrentScene().Name).Turn);
+			var config = StageConfigCategory.Instance.GetByName(self.DomainScene().CurrentScene().Name);
+			self.SetTurn(config.Turn);
+			self.FUIStagePanel.TimeSlider.max = config.HoldTime;
+			self.SetTimeSlider(config.HoldTime);
 			self.SetScore(0);
 		}
 
