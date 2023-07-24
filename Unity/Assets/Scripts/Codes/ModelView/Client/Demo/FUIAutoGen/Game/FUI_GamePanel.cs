@@ -11,6 +11,7 @@ namespace ET.Client.Game
 		public ET.Client.Common.FUI_CommonBtn StartButton;
 		public ET.Client.Common.FUI_CommonBtn SettingButton;
 		public ET.Client.Game.FUI_SettingPanel SettingPanel;
+		public GList StageSelectList;
 		public const string URL = "ui://3kf0p8qmu0ri0";
 
 		public static FUI_GamePanel CreateInstance()
@@ -26,6 +27,7 @@ namespace ET.Client.Game
 			StartButton = (ET.Client.Common.FUI_CommonBtn)GetChildAt(8);
 			SettingButton = (ET.Client.Common.FUI_CommonBtn)GetChildAt(9);
 			SettingPanel = (ET.Client.Game.FUI_SettingPanel)GetChildAt(10);
+			StageSelectList = (GList)GetChildAt(11);
 		}
 	}
 }

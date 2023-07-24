@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1080,1920" remark="Main">
-  <controller name="setting" pages="0,,1," selected="0"/>
+  <controller name="setting" pages="0,,1,Setting,2,StageSelect" selected="2"/>
   <displayList>
     <image id="n0_u0ri" name="n0" src="u0ri1" fileName="Images/Background.png" xy="-105,-288" size="1279,2489">
       <relation target="" sidePair="width-width,height-height"/>
@@ -17,6 +17,7 @@
     <image id="n6_u0ri" name="n6" src="u0rih" fileName="Images/YellowBubble.png" xy="295,96"/>
     <image id="n7_u0ri" name="n7" src="u0rig" fileName="Images/PurpleBubble.png" xy="366,47"/>
     <component id="n8_u0ri" name="StartButton" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="279,1348" size="550,270">
+      <gearDisplay controller="setting" pages="0"/>
       <relation target="" sidePair="center-center,bottom-bottom"/>
       <Button title="开始游戏" titleColor="#ff6666" titleFontSize="70"/>
       <property target="image" propertyId="1" value="ui://3kf0p8qmu0rip"/>
@@ -29,5 +30,11 @@
     <component id="n12_u0ri" name="SettingPanel" src="u0riw" fileName="SettingPanel.xml" xy="108,547">
       <gearDisplay2 controller="setting" pages="1" condition="0"/>
     </component>
+    <list id="n16_u0ri" name="StageSelectList" xy="308,286" size="500,924" overflow="scroll" defaultItem="ui://3kf0p8qmu0rix" align="center" vAlign="middle" autoClearItems="true">
+      <gearDisplay controller="setting" pages="2"/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
   </displayList>
 </component>

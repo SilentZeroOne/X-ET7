@@ -15,31 +15,44 @@ namespace ET.Client
 
 		public static void OnShow(this GamePanel self, Entity contextData = null)
 		{
+			self.FUIGamePanel.setting.SetSelectedIndex(0);
+			
 			self.FUIGamePanel.StartButton.AddListnerAsync(self.StartGame);
 			self.FUIGamePanel.SettingButton.AddListner(self.SettingBtnOnClick);
 			self.FUIGamePanel.SettingPanel.LanguageCombo.items = new string[] {"简体中文", "繁體中文", "English"};
-			self.FUIGamePanel.SettingPanel.LanguageCombo.selectedIndex = 0;
+			self.FUIGamePanel.SettingPanel.LanguageCombo.selectedIndex = self.CurrentLanguageIndex;
 			self.FUIGamePanel.SettingPanel.LanguageCombo.onChanged.Add(() =>
 			{
 				switch (self.FUIGamePanel.SettingPanel.LanguageCombo.selectedIndex)
 				{
 					case 0:
 						self.SwitchLanguage(SystemLanguage.ChineseSimplified);
+						self.CurrentLanguageIndex = 0;
 						break;
 					
 					case 1:
 						self.SwitchLanguage(SystemLanguage.ChineseTraditional);
+						self.CurrentLanguageIndex = 1;
 						break;
 					
 					case 2:
 						self.SwitchLanguage(SystemLanguage.English);
+						self.CurrentLanguageIndex = 2;
 						break;
 				}
 			});
+			
+			foreach (var config in StageConfigCategory.Instance.GetAll())
+			{
+				var item = self.FUIGamePanel.StageSelectList.AddItemFromPool();
+				item.asButton.title = config.Value.Name;
+				item.asButton.AddListnerAsync(self.SwitchStage, config.Value.Name);
+			}
 		}
 
 		public static void OnHide(this GamePanel self)
 		{
+			self.FUIGamePanel.StageSelectList.RemoveChildrenToPool();
 		}
 
 		public static void BeforeUnload(this GamePanel self)
@@ -48,8 +61,18 @@ namespace ET.Client
 
 		public static async ETTask StartGame(this GamePanel self)
 		{
-			await SceneChangeHelper.SceneChangeTo(self.DomainScene(), "Stage1");
+			// await SceneChangeHelper.SceneChangeTo(self.DomainScene(), "Stage1");
+			//
+			// self.DomainScene().GetComponent<FUIComponent>().HidePanel(PanelId.GamePanel);
+			// self.DomainScene().GetComponent<FUIComponent>().ShowPanelAsync(PanelId.StagePanel).Coroutine();
+			self.FUIGamePanel.setting.SetSelectedIndex(2);//关卡选择界面
+			
+			await ETTask.CompletedTask;
+		}
 
+		private static async ETTask SwitchStage(this GamePanel self, string name)
+		{
+			await SceneChangeHelper.SceneChangeTo(self.DomainScene(), name);
 			self.DomainScene().GetComponent<FUIComponent>().HidePanel(PanelId.GamePanel);
 			self.DomainScene().GetComponent<FUIComponent>().ShowPanelAsync(PanelId.StagePanel).Coroutine();
 		}

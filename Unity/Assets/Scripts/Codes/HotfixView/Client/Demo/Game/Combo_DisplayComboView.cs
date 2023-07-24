@@ -16,6 +16,13 @@ namespace ET.Client
             scene.GetComponent<NumericComponent>().Set(NumericType.CurrentScore, score);
             
             scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>().SetScore(score);
+            SweetStageComponent sweetStageComponent = scene.GetComponent<SweetStageComponent>();
+            if (sweetStageComponent?.Config.TargetScore <= score)
+            {
+                scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>().SetController(GameStatus.Win);
+                sweetStageComponent.Status = GameStatus.Win;
+            }
+            
             await ETTask.CompletedTask;
         }
     }

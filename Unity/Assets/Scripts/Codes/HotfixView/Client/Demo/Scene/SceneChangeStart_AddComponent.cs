@@ -12,7 +12,8 @@ namespace ET.Client
             await ResComponent.Instance.LoadSceneAsync(currentScene.Name);
             
             //currentScene.AddComponent<OperaComponent>();
-            currentScene.AddComponent<SweetStageComponent, string>(currentScene.Name);
+            if (StageConfigCategory.Instance.ContainsKey(currentScene.Name))
+                currentScene.AddComponent<SweetStageComponent, string>(currentScene.Name);
 
         }
     }

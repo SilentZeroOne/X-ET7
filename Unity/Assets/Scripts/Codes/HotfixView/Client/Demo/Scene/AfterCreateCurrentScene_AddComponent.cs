@@ -6,7 +6,8 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, EventType.AfterCreateCurrentScene args)
         {
             scene.AddComponent<FUIComponent>();
-            scene.AddComponent<GameSweetComponent, string>(scene.Name);
+            if (StageConfigCategory.Instance.ContainsKey(scene.Name))
+                scene.AddComponent<GameSweetComponent, string>(scene.Name);
             await ETTask.CompletedTask;
         }
     }

@@ -140,12 +140,12 @@ namespace ET
 
         private static void MoveFinish(this SweetMoveComponent self, bool ret)
         {
+            TimerComponent.Instance?.Remove(ref self.MoveTimer);
             if (self == null || self.IsDisposed || self.StartTime == 0)
             {
                 return;
             }
             
-            TimerComponent.Instance?.Remove(ref self.MoveTimer);
             self.StartPos = float2.zero;
             self.TargetPos = new float2(-100, -100);
             self.StartTime = 0;

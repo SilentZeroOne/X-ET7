@@ -33,6 +33,14 @@ namespace ET
             return sweet;
         }
 
+        public static void ClearAll(this GameSweetComponent self)
+        {
+            foreach (var sweet in self.Sweets)
+            {
+                sweet.Dispose();
+            }
+        }
+
         public static void Match(this GameSweetComponent self)
         {
             EventSystem.Instance.Publish(self.DomainScene(), new StageStartMatch() { StartMatch = true });

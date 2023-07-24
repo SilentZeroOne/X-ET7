@@ -551,9 +551,12 @@ namespace ET.Client
                 switch (child)
                 {
                     case GButton button:
-                        string key = $"{button.parent.resourceURL[5..]}-{button.id}";
-                        button.title = translator(key, button.title);
-                        button.selectedTitle = translator($"{key}-0", button.title);
+                        if (!string.IsNullOrEmpty(button.parent.resourceURL))
+                        {
+                            string key = $"{button.parent.resourceURL[5..]}-{button.id}";
+                            button.title = translator(key, button.title);
+                            button.selectedTitle = translator($"{key}-0", button.title);
+                        }
                         break;
                     case GLabel label:
                         string key1 = $"{label.parent.resourceURL[5..]}-{label.id}";

@@ -13,6 +13,7 @@ namespace ET.Client
 		}
 		
 		public int CurrentControlerIndex { get; set; }
+		public int CurrentLanguageIndex { get; set; }
 	}
 	
 	[ChildOf]

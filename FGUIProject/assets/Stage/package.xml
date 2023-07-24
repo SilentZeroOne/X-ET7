@@ -8,6 +8,8 @@
     <image id="u0ri2" name="bgArtboard 48.png" path="/" exported="true" scale="9grid" scale9grid="37,14,654,30"/>
     <image id="u0ri4" name="bgArtboard 49.png" path="/" exported="true" scale="9grid" scale9grid="58,22,657,46"/>
     <image id="u0ri5" name="shejiditu.png" path="/"/>
+    <image id="u0ri6" name="Repeat.png" path="/"/>
+    <image id="u0rij" name="Close.png" path="/"/>
   </resources>
   <publish name="" path="../Unity/Assets/Bundles/FUI/Stage" packageCount="2"/>
 </packageDescription>

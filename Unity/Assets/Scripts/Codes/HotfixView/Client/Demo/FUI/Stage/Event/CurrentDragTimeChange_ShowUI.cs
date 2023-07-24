@@ -7,7 +7,7 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, CurrentDragTimeChange a)
         {
-            scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>().SetTimeSlider(a.CurrentDragTime);
+            scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>()?.SetTimeSlider(a.CurrentDragTime);
         }
     }
 }

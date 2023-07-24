@@ -126,7 +126,8 @@ namespace ET.Client
             // 显示登录界面, 并传递参数contextData
             //await fuiComponent.ShowPanelAsync(PanelId.LoginPanel, contextData);
             
-            await fuiComponent.ShowPanelAsync(PanelId.GamePanel);
+            fuiComponent.ShowPanelAsync(PanelId.GamePanel).Coroutine();
+            SceneChangeHelper.SceneChangeTo(clientScene, "Bootstrap").Coroutine();
 
             await ETTask.CompletedTask;
         }

@@ -21,5 +21,7 @@ namespace ET
         }
 
         public long DragTimer;
+
+        public bool StartDrag;
     }
 }

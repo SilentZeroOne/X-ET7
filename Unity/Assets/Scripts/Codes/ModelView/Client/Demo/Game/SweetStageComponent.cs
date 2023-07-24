@@ -15,6 +15,8 @@ namespace ET
             get => this._currentTurn;
             set
             {
+                if(this.IsDisposed) return;
+                
                 this._currentTurn = value;
                 EventSystem.Instance.Publish(this.DomainScene(), new CurrentTurnChange() { CurrentTurn = value });
             } 
@@ -34,9 +36,11 @@ namespace ET
 
         public bool CanOperate
         {
-            get => this._canOperate && this._currentTurn > 0 && this._currentDragTime > 0;
+            get => this._canOperate && this._currentTurn > 0 && this._currentDragTime > 0 && this.Status == GameStatus.Progressing;
             set
             {
+                if(this.IsDisposed) return;
+                
                 this._canOperate = value;
                 EventSystem.Instance.Publish(this.DomainScene(), new StageCanOperate() { CanOperate = value });
             }
@@ -48,10 +52,14 @@ namespace ET
             get => this._currentDragTime;
             set
             {
+                if(this.IsDisposed) return;
+                
                 this._currentDragTime = value;
                 EventSystem.Instance.Publish(this.DomainScene(), new CurrentDragTimeChange() { CurrentDragTime = value });
             }
         }
+
+        public GameStatus Status { get; set; }
     }
 }
 

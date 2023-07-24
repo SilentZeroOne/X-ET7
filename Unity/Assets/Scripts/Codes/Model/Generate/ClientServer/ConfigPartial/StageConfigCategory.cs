@@ -19,6 +19,11 @@ namespace ET
         {
             return this._nameMap[name];
         }
+
+        public bool ContainsKey(string name)
+        {
+            return this._nameMap.ContainsKey(name);
+        }
     }
 }
 

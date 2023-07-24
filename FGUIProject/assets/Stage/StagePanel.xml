@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1080,1920" designImage="ui://3m1vqahlu0ri5" designImageForTest="true" remark="Main">
+  <controller name="GameEnd" pages="0,,1,,2," selected="2"/>
   <displayList>
     <image id="n0_u0ri" name="n0" src="u0ria" fileName="TopInfoBox.png" xy="259,0">
       <relation target="" sidePair="center-center,top-top"/>
@@ -19,8 +20,41 @@
       <Label title="60" titleColor="#ff9900" titleFontSize="70"/>
     </component>
     <component id="n6_u0ri" name="TimeSlider" src="u0rix" fileName="Components/ProgressBar2.xml" pkg="f2boiu4i" xy="5,760" size="1070,77">
-      <relation target="" sidePair="center-center"/>
+      <relation target="" sidePair="width-width,middle-middle"/>
       <ProgressBar value="100" max="100"/>
     </component>
+    <component id="n7_u0ri" name="CloseBtn" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="962,32">
+      <relation target="" sidePair="width-width"/>
+      <property target="image" propertyId="1" value="ui://3m1vqahlu0rij"/>
+    </component>
+    <image id="n9_u0ri" name="n9" src="ab9e4" fileName="Images/Button.png" pkg="f2boiu4i" xy="5,3" size="1077,1917">
+      <gearDisplay controller="GameEnd" pages="1,2"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n8_u0ri" name="n8" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="5,290" size="1075,400">
+      <gearDisplay2 controller="GameEnd" pages="1" condition="0"/>
+      <relation target="" sidePair="width-width,center-center,middle-middle"/>
+      <Label title="Game Over" titleColor="#ff6666" titleFontSize="162"/>
+    </component>
+    <component id="n10_u0ri" name="RetryBtn" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="245,721" size="198,198" aspect="true">
+      <gearDisplay controller="GameEnd" pages="1,2"/>
+      <property target="image" propertyId="1" value="ui://3m1vqahlu0ri6"/>
+    </component>
+    <component id="n11_u0ri" name="Close2Btn" src="lobhq" fileName="Components/CommonBtn.xml" pkg="f2boiu4i" xy="578,721" size="198,198" aspect="true">
+      <gearDisplay controller="GameEnd" pages="1,2"/>
+      <property target="image" propertyId="1" value="ui://3m1vqahlu0rij"/>
+    </component>
+    <component id="n12_u0ri" name="n12" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="6,289" size="1075,400">
+      <gearDisplay2 controller="GameEnd" pages="2" condition="0"/>
+      <relation target="" sidePair="width-width,center-center,middle-middle"/>
+      <Label title="Win!" titleColor="#ff6666" titleFontSize="162"/>
+    </component>
   </displayList>
+  <transition name="winAnim" autoPlayRepeat="0">
+    <item time="0" type="XY" target="n12_u0ri" tween="true" startValue="0,-406" endValue="0,290" duration="24"/>
+    <item time="24" type="XY" target="n12_u0ri" value="0,290"/>
+  </transition>
+  <transition name="overAnim" autoPlayRepeat="0">
+    <item time="0" type="XY" target="n8_u0ri" tween="true" startValue="0,-401.594" endValue="0,290.406" duration="24"/>
+  </transition>
 </component>

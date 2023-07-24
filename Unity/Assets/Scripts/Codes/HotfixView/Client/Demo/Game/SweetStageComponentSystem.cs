@@ -28,9 +28,17 @@ namespace ET.Client
             self.FillSpeed = 6f;
             self.CurrentTurn = self.Config.Turn;
             self.CurrentDragTime = self.Config.HoldTime;
+            self.Status = GameStatus.Progressing;
 
             self.InitGrid();
             self.AllFill().Coroutine();
+        }
+
+        public static void Restart(this SweetStageComponent self, string name)
+        {
+            self.GetParent<Scene>().GetComponent<NumericComponent>().Set(NumericType.CurrentScore, 0);
+            self.GetParent<Scene>().GetComponent<GameSweetComponent>()?.ClearAll();
+            self.Awake(name);
         }
 
         public static void InitGrid(this SweetStageComponent self)
@@ -71,7 +79,8 @@ namespace ET.Client
             bool filledNotFinished = false;
             int x = (int) self.Config.Size.X;
             int y = (int) self.Config.Size.Y;
-            GameSweetComponent sweetComponent = self.GetParent<Scene>().GetComponent<GameSweetComponent>();
+            GameSweetComponent sweetComponent = self.GetParent<Scene>()?.GetComponent<GameSweetComponent>();
+            if (sweetComponent == null) return false;
             
             using var list = ListComponent<ETTask>.Create();
             

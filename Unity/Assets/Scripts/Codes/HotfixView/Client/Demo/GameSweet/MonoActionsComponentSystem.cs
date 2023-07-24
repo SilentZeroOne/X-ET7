@@ -77,27 +77,30 @@ namespace ET.Client
         
         private static void OnEndDragAction(this MonoActionsComponent self, PointerEventData obj)
         {
-            var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
-            //if (!stageComponent.CanOperate) return;
-
-            TimerComponent.Instance.Remove(ref self.DragTimer);
-            stageComponent.CurrentDragTime = stageComponent.Config.HoldTime;
-            
-            if (stageComponent.CurrentDragSweet != null)
-                stageComponent.CurrentDragSweet = null;
-
-            self.Sweet.GetComponent<AnimatorComponent>().Animator.enabled = true;
-            //self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color = Color.white;
-            Log.Debug($"End {self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color}");
-            if (stageComponent.TempDragObject != null)
+            if (self.StartDrag)
             {
-                stageComponent.TempDragObject.SetActive(false);
+                var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
+
+                TimerComponent.Instance.Remove(ref self.DragTimer);
+                stageComponent.CurrentDragTime = stageComponent.Config.HoldTime;
+            
+                if (stageComponent.CurrentDragSweet != null)
+                    stageComponent.CurrentDragSweet = null;
+
+                self.Sweet.GetComponent<AnimatorComponent>().Animator.enabled = true;
+                //self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color = Color.white;
+                Log.Debug($"End {self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color}");
+                if (stageComponent.TempDragObject != null)
+                {
+                    stageComponent.TempDragObject.SetActive(false);
+                }
+
+                var gameSweet = self.DomainScene().GetComponent<GameSweetComponent>();
+                stageComponent.CurrentTurn--;
+                gameSweet?.Match();
+                
+                self.StartDrag = false;
             }
-
-            var gameSweet = self.DomainScene().GetComponent<GameSweetComponent>();
-            gameSweet?.Match();
-
-            stageComponent.CurrentTurn--;
         }
 
         private static void OnBeginDragAction(this MonoActionsComponent self, PointerEventData obj)
@@ -105,6 +108,8 @@ namespace ET.Client
             var stageComponent = self.DomainScene().GetComponent<SweetStageComponent>();
             if (!stageComponent.CanOperate) return;
 
+            self.StartDrag = true;
+            
             self.DragTimer = TimerComponent.Instance.NewRepeatedTimer(1000, TimerInvokeType.SweetDragTimer, self);
 
             stageComponent.CurrentDragSweet = self.Sweet;
