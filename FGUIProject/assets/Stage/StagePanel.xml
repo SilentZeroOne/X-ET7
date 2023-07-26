@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1080,1920" designImage="ui://3m1vqahlu0ri5" designImageForTest="true" remark="Main">
-  <controller name="GameEnd" pages="0,,1,,2," selected="2"/>
+  <controller name="GameEnd" pages="0,,1,,2," selected="0"/>
   <displayList>
     <image id="n0_u0ri" name="n0" src="u0ria" fileName="TopInfoBox.png" xy="259,0">
       <relation target="" sidePair="center-center,top-top"/>
@@ -49,10 +49,17 @@
       <relation target="" sidePair="width-width,center-center,middle-middle"/>
       <Label title="Win!" titleColor="#ff6666" titleFontSize="162"/>
     </component>
+    <component id="n14_xglt" name="TargetText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="356,137" size="128,78">
+      <relation target="" sidePair="center-center,top-top"/>
+      <Label title="目标：" titleColor="#ff9900"/>
+    </component>
+    <component id="n15_xglt" name="TargetValueText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="455,137" size="218,78">
+      <relation target="" sidePair="center-center,top-top"/>
+      <Label title="8000000" titleColor="#ff9900"/>
+    </component>
   </displayList>
   <transition name="winAnim" autoPlayRepeat="0">
     <item time="0" type="XY" target="n12_u0ri" tween="true" startValue="0,-406" endValue="0,290" duration="24"/>
-    <item time="24" type="XY" target="n12_u0ri" value="0,290"/>
   </transition>
   <transition name="overAnim" autoPlayRepeat="0">
     <item time="0" type="XY" target="n8_u0ri" tween="true" startValue="0,-401.594" endValue="0,290.406" duration="24"/>

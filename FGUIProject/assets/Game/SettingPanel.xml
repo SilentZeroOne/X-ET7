@@ -7,11 +7,29 @@
     </image>
     <image id="n13_u0ri" name="n13" src="ab9e4" fileName="Images/Button.png" pkg="f2boiu4i" xy="3,-6" size="867,520"/>
     <component id="n14_u0ri" name="LanguageText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="75,29" size="264,96">
-      <Label title="语言" titleColor="#ff9900" titleFontSize="49"/>
+      <Label title="语言" titleColor="#ff9900" titleFontSize="40"/>
     </component>
-    <component id="n15_u0ri" name="LanguageCombo" src="ab9ej" fileName="Components/ComboBox1.xml" pkg="f2boiu4i" xy="341,32">
+    <component id="n15_u0ri" name="LanguageCombo" src="ab9ej" fileName="Components/ComboBox1.xml" pkg="f2boiu4i" xy="341,52" size="348,48">
       <relation target="n14_u0ri" sidePair="right-left"/>
       <ComboBox visibleItemCount="10"/>
+    </component>
+    <component id="n16_xglt" name="BackgroundText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="75,157" size="264,96">
+      <Label title="背景音量" titleColor="#ff9900" titleFontSize="40"/>
+    </component>
+    <component id="n17_xglt" name="SFXText" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="75,289" size="264,96">
+      <Label title="特效音量" titleColor="#ff9900" titleFontSize="40"/>
+    </component>
+    <component id="n19_xglt" name="BackgroundSlider" src="ab9ea" fileName="Components/Slider1.xml" pkg="f2boiu4i" xy="341,177" size="348,48">
+      <Slider value="50" max="100"/>
+    </component>
+    <component id="n21_xglt" name="SFXSlider" src="ab9ea" fileName="Components/Slider1.xml" pkg="f2boiu4i" xy="341,314" size="348,48">
+      <Slider value="50" max="100"/>
+    </component>
+    <component id="n22_xglt" name="BackgroundPect" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="689,167" size="167,60">
+      <Label title="100%" titleColor="#ff9900" titleFontSize="49"/>
+    </component>
+    <component id="n23_xglt" name="SFXPect" src="ab9e8" fileName="Components/Label1.xml" pkg="f2boiu4i" xy="689,305" size="167,60">
+      <Label title="100%" titleColor="#ff9900" titleFontSize="49"/>
     </component>
   </displayList>
 </component>

@@ -10,6 +10,12 @@ namespace ET.Client.Game
 		public Controller setting;
 		public GLabel LanguageText;
 		public ET.Client.Common.FUI_ComboBox1 LanguageCombo;
+		public GLabel BackgroundText;
+		public GLabel SFXText;
+		public GSlider BackgroundSlider;
+		public GSlider SFXSlider;
+		public GLabel BackgroundPect;
+		public GLabel SFXPect;
 		public const string URL = "ui://3kf0p8qmu0riw";
 
 		public static FUI_SettingPanel CreateInstance()
@@ -24,6 +30,12 @@ namespace ET.Client.Game
 			setting = GetControllerAt(0);
 			LanguageText = (GLabel)GetChildAt(2);
 			LanguageCombo = (ET.Client.Common.FUI_ComboBox1)GetChildAt(3);
+			BackgroundText = (GLabel)GetChildAt(4);
+			SFXText = (GLabel)GetChildAt(5);
+			BackgroundSlider = (GSlider)GetChildAt(6);
+			SFXSlider = (GSlider)GetChildAt(7);
+			BackgroundPect = (GLabel)GetChildAt(8);
+			SFXPect = (GLabel)GetChildAt(9);
 		}
 	}
 }

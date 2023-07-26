@@ -28,16 +28,5 @@ namespace ET.Client
             await EventSystem.Instance.PublishAsync(sweet.DomainScene(), new AfterSweetCreate() { Sweet = sweet });
             return sweet;
         }
-        
-        public static async ETTask CreateAsyncNoReturn(Scene currentScene, int sweetId, float2 pos)
-        {
-            GameSweetComponent sweetComponent = currentScene.GetComponent<GameSweetComponent>();
-            GameSweet sweet = sweetComponent.Add(sweetId, pos);
-            sweet.PosInGrid = pos;
-
-            sweet.AddComponent<ObjectWait>();
-            
-            await EventSystem.Instance.PublishAsync(sweet.DomainScene(), new AfterSweetCreate() { Sweet = sweet });
-        }
     }
 }

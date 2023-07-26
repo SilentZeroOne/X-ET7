@@ -19,28 +19,32 @@ namespace ET.Client
 			
 			self.FUIGamePanel.StartButton.AddListnerAsync(self.StartGame);
 			self.FUIGamePanel.SettingButton.AddListner(self.SettingBtnOnClick);
-			self.FUIGamePanel.SettingPanel.LanguageCombo.items = new string[] {"简体中文", "繁體中文", "English"};
-			self.FUIGamePanel.SettingPanel.LanguageCombo.selectedIndex = self.CurrentLanguageIndex;
-			self.FUIGamePanel.SettingPanel.LanguageCombo.onChanged.Add(() =>
+			var settingPanel = self.FUIGamePanel.SettingPanel;
+			
+			settingPanel.LanguageCombo.items = new string[] {"简体中文", "繁體中文", "English"};
+			settingPanel.LanguageCombo.selectedIndex = PlayerPrefs.GetInt("sweetgame.language", 0);
+			settingPanel.LanguageCombo.onChanged.Add(() =>
 			{
-				switch (self.FUIGamePanel.SettingPanel.LanguageCombo.selectedIndex)
-				{
-					case 0:
-						self.SwitchLanguage(SystemLanguage.ChineseSimplified);
-						self.CurrentLanguageIndex = 0;
-						break;
-					
-					case 1:
-						self.SwitchLanguage(SystemLanguage.ChineseTraditional);
-						self.CurrentLanguageIndex = 1;
-						break;
-					
-					case 2:
-						self.SwitchLanguage(SystemLanguage.English);
-						self.CurrentLanguageIndex = 2;
-						break;
-				}
+				self.SetLanguage(settingPanel.LanguageCombo.selectedIndex);
 			});
+
+			self.SetLanguage(settingPanel.LanguageCombo.selectedIndex);
+
+			settingPanel.BackgroundSlider.onChanged.Add(() =>
+			{
+				self.SetBackgroundVolume(settingPanel.BackgroundSlider.value);
+			});
+
+			settingPanel.SFXSlider.onChanged.Add(() =>
+			{
+				self.SetSFXVolume(settingPanel.SFXSlider.value);
+			});
+			
+			settingPanel.BackgroundSlider.value = PlayerPrefs.GetFloat("sweetgame.backgroundVolume", 100);
+			self.SetBackgroundVolume(settingPanel.BackgroundSlider.value);
+			
+			settingPanel.SFXSlider.value = PlayerPrefs.GetFloat("sweetgame.sfxVolume", 100);
+			self.SetSFXVolume(settingPanel.SFXSlider.value);
 			
 			foreach (var config in StageConfigCategory.Instance.GetAll())
 			{
@@ -86,6 +90,40 @@ namespace ET.Client
 		public static void SwitchLanguage(this GamePanel self, SystemLanguage language)
 		{
 			self.ClientScene().GetComponent<LocalizeComponent>().SwitchLanguage(language);
+		}
+
+		public static void SetBackgroundVolume(this GamePanel self, double value)
+		{
+			self.FUIGamePanel.SettingPanel.BackgroundPect.text = Mathf.Floor((float) value) + "%";
+			AudioComponent.Instance.SetBackgroundVolume((float) value / 100);
+			PlayerPrefs.SetFloat("sweetgame.backgroundVolume", (float) value);
+		}
+
+		public static void SetSFXVolume(this GamePanel self,double value)
+		{
+			self.FUIGamePanel.SettingPanel.SFXPect.text = Mathf.Floor((float) value) + "%";
+			AudioComponent.Instance.SetSFXVolume((float) value / 100);
+			PlayerPrefs.SetFloat("sweetgame.sfxVolume", (float) value);
+		}
+
+		public static void SetLanguage(this GamePanel self,int index)
+		{
+			switch (index)
+			{
+				case 0:
+					self.SwitchLanguage(SystemLanguage.ChineseSimplified);
+					break;
+					
+				case 1:
+					self.SwitchLanguage(SystemLanguage.ChineseTraditional);
+					break;
+					
+				case 2:
+					self.SwitchLanguage(SystemLanguage.English);
+					break;
+			}
+			self.CurrentLanguageIndex = index;
+			PlayerPrefs.SetInt("sweetgame.language", index);
 		}
 	}
 }

@@ -29,6 +29,8 @@ namespace ET.Client
             self.CurrentTurn = self.Config.Turn;
             self.CurrentDragTime = self.Config.HoldTime;
             self.Status = GameStatus.Progressing;
+            
+            AudioComponent.Instance.PlayInBackground("anime_05_loop");
 
             self.InitGrid();
             self.AllFill().Coroutine();

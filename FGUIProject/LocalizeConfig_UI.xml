@@ -7,7 +7,9 @@
   <string name="3kf0p8qmu0ri0-n8_u0ri" mz="StartButton">开始游戏</string>
   <string name="3kf0p8qmu0ri0-n10_u0ri" mz="SettingButton">设置</string>
   <!-- Game/SettingPanel.xml -->
-  <string name="3kf0p8qmu0riw-n14_u0ri" mz="n14">语言</string>
+  <string name="3kf0p8qmu0riw-n14_u0ri" mz="LanguageText">语言</string>
+  <string name="3kf0p8qmu0riw-n16_xglt" mz="BackgroundText">背景音量</string>
+  <string name="3kf0p8qmu0riw-n17_xglt" mz="SFXText">特效音量</string>
   <!-- HotUpdate/HotUpdatePanel.xml -->
   <string name="2f8jqefflobh0-n0_lobh" mz="n0">热更新</string>
   <!-- Lobby/LobbyPanel.xml -->
@@ -15,6 +17,10 @@
   <string name="ti3ka994t52l0-n3_lobh" mz="EnterMap">进入地图</string>
   <!-- Login/LoginPanel.xml -->
   <string name="rgfb0w498omm0-n27_lobh" mz="LoginBtn">进入地图</string>
+  <!-- Stage/StagePanel.xml -->
+  <string name="3m1vqahlu0ri0-n8_u0ri" mz="n8">Game Over</string>
+  <string name="3m1vqahlu0ri0-n12_u0ri" mz="n12">Win!</string>
+  <string name="3m1vqahlu0ri0-n14_xglt" mz="TargetText">目标：</string>
   <!-- TestA/Button1.xml -->
   <string name="2kcjlx6nw6rg2-n3_w6rg" mz="Text1">文字1</string>
   <string name="2kcjlx6nw6rg2-n4_w6rg" mz="Text2">文字2</string>

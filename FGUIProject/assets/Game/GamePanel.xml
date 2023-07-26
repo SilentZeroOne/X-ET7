@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1080,1920" remark="Main">
-  <controller name="setting" pages="0,,1,Setting,2,StageSelect" selected="2"/>
+  <controller name="setting" pages="0,,1,Setting,2,StageSelect" selected="1"/>
   <displayList>
     <image id="n0_u0ri" name="n0" src="u0ri1" fileName="Images/Background.png" xy="-105,-288" size="1279,2489">
       <relation target="" sidePair="width-width,height-height"/>

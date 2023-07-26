@@ -12,10 +12,10 @@ namespace ET
 	{
 		None,
 		Android,
-		IOS,
-		Windows,
-		MacOS,
-		Linux
+		iOS,
+		StandaloneWindows64,
+		StandaloneOSX,
+		StandaloneLinux64
 	}
 	
 	public enum ConfigFolder
@@ -60,13 +60,13 @@ namespace ET
 #if UNITY_ANDROID
 			activePlatform = PlatformType.Android;
 #elif UNITY_IOS
-			activePlatform = PlatformType.IOS;
+			activePlatform = PlatformType.iOS;
 #elif UNITY_STANDALONE_WIN
-			activePlatform = PlatformType.Windows;
+			activePlatform = PlatformType.StandaloneWindows64;
 #elif UNITY_STANDALONE_OSX
-			activePlatform = PlatformType.MacOS;
+			activePlatform = PlatformType.StandaloneOSX;
 #elif UNITY_STANDALONE_LINUX
-			activePlatform = PlatformType.Linux;
+			activePlatform = PlatformType.StandaloneLinux64;
 #else
 			activePlatform = PlatformType.None;
 #endif

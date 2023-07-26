@@ -21,6 +21,7 @@ namespace ET.Client
 		{
 			var config = StageConfigCategory.Instance.GetByName(self.DomainScene().CurrentScene().Name);
 			self.FUIStagePanel.GameEnd.SetSelectedIndex(0);
+			self.FUIStagePanel.TargetValueText.text = config.TargetScore.ToString();
 			self.SetTurn(config.Turn);
 			self.FUIStagePanel.TimeSlider.max = config.HoldTime;
 			self.SetTimeSlider(config.HoldTime);
@@ -58,6 +59,8 @@ namespace ET.Client
 			{
 				self.FUIStagePanel.GameEnd.SetSelectedIndex(2);
 				self.FUIStagePanel.winAnim.Play();
+				
+				AudioComponent.Instance.PlayInBackground("Win");
 			}
 			else if (gameStatus == GameStatus.Over&& self.FUIStagePanel.GameEnd.selectedIndex!=1)
 			{
@@ -79,6 +82,8 @@ namespace ET.Client
 		public static async ETTask OnBackBtnClick(this StagePanel self)
 		{
 			await SceneChangeHelper.SceneChangeTo(self.DomainScene(), "Bootstrap");
+			AudioComponent.Instance.PlayInBackground("anime_01_loop");
+			
 			self.DomainScene().GetComponent<FUIComponent>().ShowPanelAsync(PanelId.GamePanel).Coroutine();
 			self.DomainScene().GetComponent<FUIComponent>().HidePanel(PanelId.StagePanel);
 		}

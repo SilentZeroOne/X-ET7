@@ -135,27 +135,27 @@ namespace ET
         private string GetHostServerURL()
         {
             //string hostServerIP = "http://10.0.2.2"; //安卓模拟器地址
-            string hostServerIP = "http://127.0.0.1";
+            string hostServerIP = "http://127.0.0.1:8080";
             string gameVersion = "v1.0";
 
 #if UNITY_EDITOR
             if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.Android)
-                return $"{hostServerIP}/CDN/Android/{gameVersion}";
+                return $"{hostServerIP}/Bundles/CDN/Android/{gameVersion}";
             else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.iOS)
-                return $"{hostServerIP}/CDN/IPhone/{gameVersion}";
+                return $"{hostServerIP}/Bundles/CDN/IPhone/{gameVersion}";
             else if (UnityEditor.EditorUserBuildSettings.activeBuildTarget == UnityEditor.BuildTarget.WebGL)
-                return $"{hostServerIP}/CDN/WebGL/{gameVersion}";
+                return $"{hostServerIP}/Bundles/CDN/WebGL/{gameVersion}";
             else
-                return $"{hostServerIP}/CDN/PC/{gameVersion}";
+                return $"{hostServerIP}/Bundles/CDN/PC/{gameVersion}";
 #else
 		if (Application.platform == RuntimePlatform.Android)
-			return $"{hostServerIP}/CDN/Android/{gameVersion}";
+			return $"{hostServerIP}/Bundles/CDN/Android/{gameVersion}";
 		else if (Application.platform == RuntimePlatform.IPhonePlayer)
-			return $"{hostServerIP}/CDN/IPhone/{gameVersion}";
+			return $"{hostServerIP}/Bundles/CDN/IPhone/{gameVersion}";
 		else if (Application.platform == RuntimePlatform.WebGLPlayer)
-			return $"{hostServerIP}/CDN/WebGL/{gameVersion}";
+			return $"{hostServerIP}/Bundles/CDN/WebGL/{gameVersion}";
 		else
-			return $"{hostServerIP}/CDN/PC/{gameVersion}";
+			return $"{hostServerIP}/Bundles/CDN/PC/{gameVersion}";
 #endif
         }
         

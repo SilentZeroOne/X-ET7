@@ -6,7 +6,7 @@
     <image id="ab9e4" name="Button.png" path="/Images/" exported="true" scale="9grid" scale9grid="144,30,288,60"/>
     <component id="ab9e8" name="Label1.xml" path="/Components/" exported="true"/>
     <component id="ab9e9" name="Slider1_grip.xml" path="/Components/"/>
-    <component id="ab9ea" name="Slider1.xml" path="/Components/"/>
+    <component id="ab9ea" name="Slider1.xml" path="/Components/" exported="true"/>
     <component id="ab9eh" name="ComboBox1_item.xml" path="/Components/"/>
     <component id="ab9ei" name="ComboBox1_popup.xml" path="/Components/"/>
     <component id="ab9ej" name="ComboBox1.xml" path="/Components/" exported="true"/>

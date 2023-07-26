@@ -10,7 +10,9 @@ namespace ET
     {
         private const string relativeDirPrefix = "../Release";
 
-        public static string BuildFolder = "../Release/{0}/StreamingAssets/";
+        //public static string BuildFolder = "../Release/{0}/StreamingAssets/";
+        public static string BuildFolder = "../Unity/Bundles/{0}/DefaultPackage/v1.0";
+        public static string BuildInFilesFolder = "Assets/StreamingAssets/BuildinFiles/";
         
         
         [InitializeOnLoadMethod]
@@ -99,7 +101,7 @@ namespace ET
             string exeName = programName;
             switch (type)
             {
-                case PlatformType.Windows:
+                case PlatformType.StandaloneWindows64:
                     buildTarget = BuildTarget.StandaloneWindows64;
                     exeName += ".exe";
                     break;
@@ -107,14 +109,14 @@ namespace ET
                     buildTarget = BuildTarget.Android;
                     exeName += ".apk";
                     break;
-                case PlatformType.IOS:
+                case PlatformType.iOS:
                     buildTarget = BuildTarget.iOS;
                     break;
-                case PlatformType.MacOS:
+                case PlatformType.StandaloneOSX:
                     buildTarget = BuildTarget.StandaloneOSX;
                     break;
                 
-                case PlatformType.Linux:
+                case PlatformType.StandaloneLinux64:
                     buildTarget = BuildTarget.StandaloneLinux64;
                     break;
             }
@@ -127,15 +129,20 @@ namespace ET
             }
             Directory.CreateDirectory(fold);
 
-            UnityEngine.Debug.Log("start build assetbundle");
-            BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
+            //UnityEngine.Debug.Log("start build assetbundle");
+            //BuildPipeline.BuildAssetBundles(fold, buildAssetBundleOptions, buildTarget);
 
-            UnityEngine.Debug.Log("finish build assetbundle");
+            //UnityEngine.Debug.Log("finish build assetbundle");
+
+            if (!Directory.Exists(BuildInFilesFolder))
+            {
+                Directory.CreateDirectory(BuildInFilesFolder);
+            }
 
             if (isContainAB)
             {
                 FileHelper.CleanDirectory("Assets/StreamingAssets/");
-                FileHelper.CopyDirectory(fold, "Assets/StreamingAssets/");
+                FileHelper.CopyDirectory(fold, "Assets/StreamingAssets/BuildinFiles/");
             }
 
             if (isBuildExe)
@@ -150,7 +157,7 @@ namespace ET
             }
             else
             {
-                if (isContainAB && type == PlatformType.Windows)
+                if (isContainAB && type == PlatformType.StandaloneWindows64)
                 {
                     string targetPath = Path.Combine(relativeDirPrefix, $"{programName}_Data/StreamingAssets/");
                     FileHelper.CleanDirectory(targetPath);

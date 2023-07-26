@@ -67,6 +67,7 @@ namespace ET.Client
             if (sweet != null && sweet != self.Sweet)
             {
                 SweetPosHelper.SwitchPos(self.DomainScene(), sweet, self.Sweet);
+                AudioComponent.Instance.PlayOneShot("BubbleLight");
             }
         }
 
@@ -88,8 +89,6 @@ namespace ET.Client
                     stageComponent.CurrentDragSweet = null;
 
                 self.Sweet.GetComponent<AnimatorComponent>().Animator.enabled = true;
-                //self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color = Color.white;
-                Log.Debug($"End {self.Sweet.GetComponent<SpriteRendererComponent>().SpriteRenderer.color}");
                 if (stageComponent.TempDragObject != null)
                 {
                     stageComponent.TempDragObject.SetActive(false);

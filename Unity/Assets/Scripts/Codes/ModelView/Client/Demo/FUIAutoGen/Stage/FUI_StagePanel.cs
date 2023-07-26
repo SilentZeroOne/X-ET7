@@ -16,6 +16,8 @@ namespace ET.Client.Stage
 		public ET.Client.Common.FUI_CommonBtn CloseBtn;
 		public ET.Client.Common.FUI_CommonBtn RetryBtn;
 		public ET.Client.Common.FUI_CommonBtn Close2Btn;
+		public GLabel TargetText;
+		public GLabel TargetValueText;
 		public const string URL = "ui://3m1vqahlu0ri0";
 
 		public static FUI_StagePanel CreateInstance()
@@ -36,6 +38,8 @@ namespace ET.Client.Stage
 			CloseBtn = (ET.Client.Common.FUI_CommonBtn)GetChildAt(6);
 			RetryBtn = (ET.Client.Common.FUI_CommonBtn)GetChildAt(9);
 			Close2Btn = (ET.Client.Common.FUI_CommonBtn)GetChildAt(10);
+			TargetText = (GLabel)GetChildAt(12);
+			TargetValueText = (GLabel)GetChildAt(13);
 		}
 	}
 }

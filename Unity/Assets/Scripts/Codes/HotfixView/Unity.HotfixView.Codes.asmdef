@@ -10,8 +10,8 @@
         "Unity.Mathematics",
         "Unity.Loader",
         "DOTween.Modules",
-        "Unity.InputSystem",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [
         "Editor"

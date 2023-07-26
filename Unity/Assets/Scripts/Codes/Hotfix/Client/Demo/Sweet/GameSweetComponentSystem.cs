@@ -278,7 +278,7 @@ namespace ET
                 foreach (var sweet in self.FinalMatchList[i])
                 {
                     EventSystem.Instance.PublishAsync(self.DomainScene(), new ClearSweet() { Sweet = sweet }).Coroutine();
-                    taskList.Add(SweetFactory.CreateAsyncNoReturn(self.DomainScene(), 1007, sweet.PosInGrid));
+                    taskList.Add(self.CreateSweet(1007, sweet.PosInGrid));
                 }
 
                 EventSystem.Instance.PublishAsync(self.DomainScene(),
@@ -294,6 +294,16 @@ namespace ET
             await EventSystem.Instance.PublishAsync(self.DomainScene(), new ReFillAll());
             
             self.Match();
+        }
+
+        private static async ETTask CreateSweet(this GameSweetComponent self, int sweetId, float2 pos)
+        {
+            GameSweet sweet = self.Add(sweetId, pos);
+            sweet.PosInGrid = pos;
+
+            sweet.AddComponent<ObjectWait>();
+            
+            await EventSystem.Instance.PublishAsync(sweet.DomainScene(), new AfterSweetCreate() { Sweet = sweet });
         }
     }
 }

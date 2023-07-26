@@ -8,6 +8,7 @@ namespace ET.Client
         protected override async ETTask Run(Scene scene, CurrentTurnChange a)
         {
             scene.Parent.DomainScene().GetComponent<FUIComponent>().GetPanelLogic<StagePanel>()?.SetTurn(a.CurrentTurn);
+            await ETTask.CompletedTask;
         }
     }
 }

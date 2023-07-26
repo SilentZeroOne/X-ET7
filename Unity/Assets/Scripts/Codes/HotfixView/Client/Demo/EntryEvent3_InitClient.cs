@@ -8,15 +8,24 @@ namespace ET.Client
     {
         protected override async ETTask Run(Scene scene, ET.EventType.EntryEvent3 args)
         {
+            #if !UNITY_EDITOR && UNITY_STANDALONE
+            Screen.SetResolution(720, 1280, false);
+            #endif
+            
             Root.Instance.Scene.AddComponent<GlobalComponent>();
             Root.Instance.Scene.AddComponent<ScreenDetectComponent>();
+            Root.Instance.Scene.AddComponent<AudioComponent>();
             
             Root.Instance.Scene.AddComponent<FsmDispatcherComponent>();
 
             Scene clientScene = await SceneFactory.CreateClientScene(1, "Game");
 
             // 热更流程
+#if UNITY_EDITOR //先不走热更  --需要部署CDN
             await HotUpdateAsync(clientScene);
+#else
+            await EnterGame(clientScene);
+#endif
         }
   
         private static async ETTask HotUpdateAsync(Scene clientScene)
@@ -126,6 +135,7 @@ namespace ET.Client
             // 显示登录界面, 并传递参数contextData
             //await fuiComponent.ShowPanelAsync(PanelId.LoginPanel, contextData);
             
+            AudioComponent.Instance.PlayInBackground("anime_01_loop");
             fuiComponent.ShowPanelAsync(PanelId.GamePanel).Coroutine();
             SceneChangeHelper.SceneChangeTo(clientScene, "Bootstrap").Coroutine();
 

@@ -1,251 +1,237 @@
+using System.Collections.Generic;
 public class AOTGenericReferences : UnityEngine.MonoBehaviour
 {
+
+	// {{ AOT assemblies
+	public static readonly IReadOnlyList<string> PatchedAOTAssemblyList = new List<string>
+	{
+		"DOTween.dll",
+		"System.Core.dll",
+		"System.dll",
+		"Unity.Core.dll",
+		"Unity.InputSystem.dll",
+		"Unity.ThirdParty.dll",
+		"UnityEngine.CoreModule.dll",
+		"mscorlib.dll",
+	};
+	// }}
 
 	// {{ constraint implement type
 	// }} 
 
-	// {{ AOT generic type
-	//ET.AEvent`1<ET.EventType.EntryEvent1>
-	//ET.AEvent`1<ET.Server.EventType.UnitLeaveSightRange>
-	//ET.AEvent`1<ET.Server.NetInnerComponentOnRead>
-	//ET.AEvent`1<ET.Server.NetServerComponentOnRead>
-	//ET.AEvent`1<ET.EventType.EntryEvent2>
-	//ET.AEvent`1<ET.EventType.NumbericChange>
-	//ET.AEvent`1<ET.Client.NetClientComponentOnRead>
-	//ET.AEvent`1<ET.Server.EventType.UnitEnterSightRange>
-	//ET.AEvent`1<ET.EventType.EntryEvent3>
-	//ET.AEvent`1<ET.EventType.ChangePosition>
-	//ET.AEvent`1<ET.EventType.AfterCreateClientScene>
-	//ET.AEvent`1<ET.EventType.AfterCreateCurrentScene>
-	//ET.AEvent`1<ET.EventType.SceneChangeStart>
-	//ET.AEvent`1<ET.EventType.LoginFinish>
-	//ET.AEvent`1<ET.EventType.AfterUnitCreate>
-	//ET.AEvent`1<ET.EventType.ChangeRotation>
-	//ET.AInvokeHandler`2<ET.ConfigComponent/GetOneConfigBytes,System.Object>
-	//ET.AInvokeHandler`2<ET.ConfigComponent/GetAllConfigBytes,System.Object>
-	//ET.AInvokeHandler`2<ET.Server.RobotInvokeArgs,System.Object>
-	//ET.AInvokeHandler`2<ET.NavmeshComponent/RecastFileLoader,System.Object>
-	//ET.ATimer`1<System.Object>
-	//ET.AwakeSystem`1<System.Object>
-	//ET.AwakeSystem`2<System.Object,System.Int64>
-	//ET.AwakeSystem`2<System.Object,System.Object>
-	//ET.AwakeSystem`2<System.Object,ET.Server.MailboxType>
-	//ET.AwakeSystem`2<System.Object,System.Int32>
-	//ET.AwakeSystem`2<System.Object,System.Net.Sockets.AddressFamily>
-	//ET.AwakeSystem`3<System.Object,System.Object,System.Int32>
-	//ET.AwakeSystem`3<System.Object,System.Int32,Unity.Mathematics.float3>
-	//ET.AwakeSystem`3<System.Object,System.Int64,System.Object>
-	//ET.AwakeSystem`3<System.Object,System.Object,System.Object>
-	//ET.AwakeSystem`4<System.Object,System.Object,System.Object,System.Int32>
-	//ET.ConfigSingleton`1<System.Object>
-	//ET.DestroySystem`1<System.Object>
-	//ET.ETAsyncTaskMethodBuilder`1<System.Byte>
-	//ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_SceneChangeFinish>
-	//ET.ETAsyncTaskMethodBuilder`1<UnityEngine.SceneManagement.Scene>
-	//ET.ETAsyncTaskMethodBuilder`1<System.UInt32>
-	//ET.ETAsyncTaskMethodBuilder`1<System.ValueTuple`2<System.UInt32,System.Object>>
-	//ET.ETAsyncTaskMethodBuilder`1<System.Int32>
-	//ET.ETAsyncTaskMethodBuilder`1<System.Int64>
-	//ET.ETAsyncTaskMethodBuilder`1<System.Object>
-	//ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_UnitStop>
-	//ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_CreateMyUnit>
-	//ET.ETTask`1<System.Int64>
-	//ET.ETTask`1<System.Int32>
-	//ET.ETTask`1<ET.Client.Wait_SceneChangeFinish>
-	//ET.ETTask`1<System.Byte>
-	//ET.ETTask`1<ET.Client.Wait_UnitStop>
-	//ET.ETTask`1<System.ValueTuple`2<System.UInt32,System.Object>>
-	//ET.ETTask`1<System.Object>
-	//ET.ETTask`1<System.UInt32>
-	//ET.ETTask`1<ET.Client.Wait_CreateMyUnit>
-	//ET.ETTask`1<UnityEngine.SceneManagement.Scene>
-	//ET.IAwake`1<System.Object>
-	//ET.IAwake`1<System.Int64>
-	//ET.IAwake`1<ET.Server.MailboxType>
-	//ET.IAwake`1<System.Net.Sockets.AddressFamily>
-	//ET.IAwake`1<System.Int32>
-	//ET.IAwake`2<System.Object,System.Int32>
-	//ET.IAwake`2<System.Int64,System.Object>
-	//ET.IAwake`2<System.Int32,Unity.Mathematics.float3>
-	//ET.IAwake`2<System.Object,System.Object>
-	//ET.IAwake`3<System.Object,System.Object,System.Int32>
-	//ET.LateUpdateSystem`1<System.Object>
-	//ET.ListComponent`1<Unity.Mathematics.float3>
-	//ET.ListComponent`1<System.Int64>
-	//ET.ListComponent`1<System.Object>
-	//ET.LoadSystem`1<System.Object>
-	//ET.MultiMap`2<System.Int32,System.Object>
-	//ET.MultiMap`2<System.Object,System.Object>
-	//ET.Singleton`1<System.Object>
-	//ET.UpdateSystem`1<System.Object>
-	//MongoDB.Driver.IMongoCollection`1<System.Object>
-	//System.Action`1<System.Single>
-	//System.Action`1<System.Object>
-	//System.Action`2<System.Int64,System.Object>
-	//System.Action`2<System.Int64,System.Int32>
-	//System.Action`3<System.Int64,System.Int64,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Int64,System.Int64>
-	//System.Collections.Generic.Dictionary`2<ET.Client.PanelId,System.Object>
-	//System.Collections.Generic.Dictionary`2<ET.Client.PanelId,ET.Client.PanelInfo>
-	//System.Collections.Generic.Dictionary`2<System.Int32,ET.RpcInfo>
-	//System.Collections.Generic.Dictionary`2<System.Int32,System.Int64>
-	//System.Collections.Generic.Dictionary`2<System.UInt32,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.UInt16,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Object,System.Int64>
-	//System.Collections.Generic.Dictionary`2<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Int64,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Object,ET.Client.PanelInfo>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.UInt32,System.Object>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Int32,System.Int64>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Int64,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection<System.Int64,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<System.Int64,System.Object>
-	//System.Collections.Generic.HashSet`1<System.Object>
-	//System.Collections.Generic.HashSet`1<System.Int64>
-	//System.Collections.Generic.HashSet`1<System.UInt16>
-	//System.Collections.Generic.HashSet`1/Enumerator<System.Int64>
-	//System.Collections.Generic.HashSet`1/Enumerator<System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Int64,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Int32,ET.Server.ActorMessageSender>
-	//System.Collections.Generic.KeyValuePair`2<System.Int32,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.UInt32,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Int32,System.Int64>
-	//System.Collections.Generic.List`1<Unity.Mathematics.float3>
-	//System.Collections.Generic.List`1<System.Int32>
-	//System.Collections.Generic.List`1<ET.Client.PanelId>
-	//System.Collections.Generic.List`1<System.Int64>
-	//System.Collections.Generic.List`1<System.Object>
-	//System.Collections.Generic.List`1/Enumerator<Unity.Mathematics.float3>
-	//System.Collections.Generic.List`1/Enumerator<System.Int64>
-	//System.Collections.Generic.List`1/Enumerator<System.Int32>
-	//System.Collections.Generic.List`1/Enumerator<System.Object>
-	//System.Collections.Generic.Queue`1<System.Object>
-	//System.Collections.Generic.SortedDictionary`2<System.Object,System.Object>
-	//System.Collections.Generic.SortedDictionary`2<System.Int32,ET.Server.ActorMessageSender>
-	//System.Collections.Generic.SortedDictionary`2<System.Int32,System.Object>
-	//System.Collections.Generic.SortedDictionary`2/Enumerator<System.Int32,ET.Server.ActorMessageSender>
-	//System.Collections.Generic.SortedDictionary`2/ValueCollection<System.Int32,System.Object>
-	//System.Collections.Generic.SortedDictionary`2/ValueCollection/Enumerator<System.Int32,System.Object>
-	//System.Collections.Generic.Stack`1<ET.Client.PanelId>
-	//System.Func`1<System.Object>
-	//System.Func`2<System.Object,System.Object>
-	//System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.UInt32,System.UInt32>>
-	//System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>
-	//System.Threading.Tasks.Task`1<System.ValueTuple`2<System.UInt32,System.UInt32>>
-	//System.Threading.Tasks.Task`1<System.Object>
-	//System.ValueTuple`2<System.UInt32,System.Object>
-	//System.ValueTuple`2<System.UInt32,System.UInt32>
+	// {{ AOT generic types
+	// DG.Tweening.Core.DOGetter<long>
+	// DG.Tweening.Core.DOSetter<long>
+	// ET.AEvent<object,ET.Client.NetClientComponentOnRead>
+	// ET.AEvent<object,ET.EventType.AfterCreateClientScene>
+	// ET.AEvent<object,ET.EventType.AfterCreateCurrentScene>
+	// ET.AEvent<object,ET.EventType.AfterSweetCreate>
+	// ET.AEvent<object,ET.EventType.AfterUnitCreate>
+	// ET.AEvent<object,ET.EventType.ChangePosition>
+	// ET.AEvent<object,ET.EventType.ChangeRotation>
+	// ET.AEvent<object,ET.EventType.ClearSweet>
+	// ET.AEvent<object,ET.EventType.Combo>
+	// ET.AEvent<object,ET.EventType.CurrentDragTimeChange>
+	// ET.AEvent<object,ET.EventType.CurrentTurnChange>
+	// ET.AEvent<object,ET.EventType.EntryEvent1>
+	// ET.AEvent<object,ET.EventType.EntryEvent3>
+	// ET.AEvent<object,ET.EventType.LoginFinish>
+	// ET.AEvent<object,ET.EventType.NumbericChange>
+	// ET.AEvent<object,ET.EventType.OnPatchDownloadProgress>
+	// ET.AEvent<object,ET.EventType.OnPatchDownlodFailed>
+	// ET.AEvent<object,ET.EventType.ReFillAll>
+	// ET.AEvent<object,ET.EventType.SceneChangeStart>
+	// ET.AEvent<object,ET.EventType.ScreenResolutionChange>
+	// ET.AEvent<object,ET.EventType.StageCanOperate>
+	// ET.AEvent<object,ET.EventType.StageStartMatch>
+	// ET.AEvent<object,ET.EventType.SweetChangePosition>
+	// ET.AEvent<object,ET.EventType.SweetMoveStart>
+	// ET.AEvent<object,ET.EventType.SweetMoveStop>
+	// ET.AEvent<object,ET.EventType.SwitchLanguage>
+	// ET.AInvokeHandler<ET.ConfigComponent.GetAllConfigBytes,object>
+	// ET.AInvokeHandler<ET.ConfigComponent.GetOneConfigBytes,object>
+	// ET.ATimer<object>
+	// ET.AwakeSystem<object,System.Net.Sockets.AddressFamily>
+	// ET.AwakeSystem<object,byte>
+	// ET.AwakeSystem<object,int>
+	// ET.AwakeSystem<object,object,int>
+	// ET.AwakeSystem<object,object>
+	// ET.AwakeSystem<object>
+	// ET.ConfigSingleton<object>
+	// ET.DestroySystem<object>
+	// ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_CreateMyUnit>
+	// ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_SceneChangeFinish>
+	// ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_UnitStop>
+	// ET.ETAsyncTaskMethodBuilder<System.ValueTuple<uint,object>>
+	// ET.ETAsyncTaskMethodBuilder<UnityEngine.SceneManagement.Scene>
+	// ET.ETAsyncTaskMethodBuilder<byte>
+	// ET.ETAsyncTaskMethodBuilder<int>
+	// ET.ETAsyncTaskMethodBuilder<object>
+	// ET.ETAsyncTaskMethodBuilder<uint>
+	// ET.ETTask<ET.Client.Wait_CreateMyUnit>
+	// ET.ETTask<ET.Client.Wait_SceneChangeFinish>
+	// ET.ETTask<ET.Client.Wait_UnitStop>
+	// ET.ETTask<System.ValueTuple<uint,object>>
+	// ET.ETTask<UnityEngine.SceneManagement.Scene>
+	// ET.ETTask<byte>
+	// ET.ETTask<int>
+	// ET.ETTask<object>
+	// ET.ETTask<uint>
+	// ET.EntityRef<object>
+	// ET.IAwake<System.Net.Sockets.AddressFamily>
+	// ET.IAwake<byte>
+	// ET.IAwake<int>
+	// ET.IAwake<object,int>
+	// ET.IAwake<object>
+	// ET.LateUpdateSystem<object>
+	// ET.ListComponent<Unity.Mathematics.float3>
+	// ET.ListComponent<object>
+	// ET.LoadSystem<object>
+	// ET.Singleton<object>
+	// ET.UpdateSystem<object>
+	// System.Action<float>
+	// System.Action<long,int>
+	// System.Action<long,long,object>
+	// System.Action<object>
+	// System.Collections.Generic.Dictionary.Enumerator<int,long>
+	// System.Collections.Generic.Dictionary.Enumerator<int,object>
+	// System.Collections.Generic.Dictionary.Enumerator<object,object>
+	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,object>
+	// System.Collections.Generic.Dictionary.ValueCollection<int,object>
+	// System.Collections.Generic.Dictionary<ET.Client.PanelId,ET.Client.PanelInfo>
+	// System.Collections.Generic.Dictionary<ET.Client.PanelId,object>
+	// System.Collections.Generic.Dictionary<int,ET.RpcInfo>
+	// System.Collections.Generic.Dictionary<int,int>
+	// System.Collections.Generic.Dictionary<int,long>
+	// System.Collections.Generic.Dictionary<int,object>
+	// System.Collections.Generic.Dictionary<object,ET.Client.PanelInfo>
+	// System.Collections.Generic.Dictionary<object,long>
+	// System.Collections.Generic.Dictionary<object,object>
+	// System.Collections.Generic.Dictionary<ushort,object>
+	// System.Collections.Generic.HashSet.Enumerator<object>
+	// System.Collections.Generic.HashSet<object>
+	// System.Collections.Generic.HashSet<ushort>
+	// System.Collections.Generic.KeyValuePair<int,long>
+	// System.Collections.Generic.KeyValuePair<int,object>
+	// System.Collections.Generic.KeyValuePair<object,object>
+	// System.Collections.Generic.List.Enumerator<Unity.Mathematics.float3>
+	// System.Collections.Generic.List.Enumerator<long>
+	// System.Collections.Generic.List.Enumerator<object>
+	// System.Collections.Generic.List<ET.Client.PanelId>
+	// System.Collections.Generic.List<Unity.Mathematics.float3>
+	// System.Collections.Generic.List<long>
+	// System.Collections.Generic.List<object>
+	// System.Collections.Generic.Queue<object>
+	// System.Collections.Generic.SortedDictionary.ValueCollection.Enumerator<int,object>
+	// System.Collections.Generic.SortedDictionary.ValueCollection<int,object>
+	// System.Collections.Generic.SortedDictionary<int,object>
+	// System.Collections.Generic.Stack<ET.Client.PanelId>
+	// System.Func<object,object,object>
+	// System.Func<object,object>
+	// System.Func<object>
+	// System.Runtime.CompilerServices.TaskAwaiter<System.ValueTuple<uint,uint>>
+	// System.Runtime.CompilerServices.TaskAwaiter<object>
+	// System.Threading.Tasks.Task<System.ValueTuple<uint,uint>>
+	// System.Threading.Tasks.Task<object>
+	// System.ValueTuple<object,object>
+	// System.ValueTuple<uint,object>
+	// System.ValueTuple<uint,uint>
+	// UnityEngine.InputSystem.InputControl<UnityEngine.Vector2>
 	// }}
 
 	public void RefMethods()
 	{
-		// System.String Bright.Common.StringUtil::CollectionToString<System.Int32>(System.Collections.Generic.IEnumerable`1<System.Int32>)
-		// CommandLine.ParserResult`1<System.Object> CommandLine.Parser::ParseArguments<System.Object>(System.Collections.Generic.IEnumerable`1<System.String>)
-		// CommandLine.ParserResult`1<System.Object> CommandLine.ParserResultExtensions::WithNotParsed<System.Object>(CommandLine.ParserResult`1<System.Object>,System.Action`1<System.Collections.Generic.IEnumerable`1<CommandLine.Error>>)
-		// CommandLine.ParserResult`1<System.Object> CommandLine.ParserResultExtensions::WithParsed<System.Object>(CommandLine.ParserResult`1<System.Object>,System.Action`1<System.Object>)
-		// System.Object ET.Entity::AddChild<System.Object>(System.Boolean)
-		// System.Object ET.Entity::AddChild<System.Object,System.Object,System.Object,System.Int32>(System.Object,System.Object,System.Int32,System.Boolean)
-		// System.Object ET.Entity::AddChild<System.Object,System.Object>(System.Object,System.Boolean)
-		// System.Object ET.Entity::AddChild<System.Object,System.Int64,System.Object>(System.Int64,System.Object,System.Boolean)
-		// System.Object ET.Entity::AddChildWithId<System.Object>(System.Int64,System.Boolean)
-		// System.Object ET.Entity::AddChildWithId<System.Object,System.Int32>(System.Int64,System.Int32,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Object>(System.Object,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,ET.Server.MailboxType>(ET.Server.MailboxType,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Object,System.Object>(System.Object,System.Object,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Net.Sockets.AddressFamily>(System.Net.Sockets.AddressFamily,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Int64>(System.Int64,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Int32,Unity.Mathematics.float3>(System.Int32,Unity.Mathematics.float3,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Object,System.Int32>(System.Object,System.Int32,System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object>(System.Boolean)
-		// System.Object ET.Entity::AddComponent<System.Object,System.Int32>(System.Int32,System.Boolean)
-		// System.Object ET.Entity::GetChild<System.Object>(System.Int64)
-		// System.Object ET.Entity::GetComponent<System.Object>()
-		// System.Object ET.Entity::GetParent<System.Object>()
-		// System.Void ET.Entity::RemoveComponent<System.Object>()
-		// ET.SceneType ET.EnumHelper::FromString<ET.SceneType>(System.String)
-		// System.Void ET.ETAsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<ET.ETTaskCompleted,System.Object>(ET.ETTaskCompleted&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.UInt32,System.UInt32>>,System.Object>(System.Runtime.CompilerServices.TaskAwaiter`1<System.ValueTuple`2<System.UInt32,System.UInt32>>&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,System.Object>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<ET.ETTaskCompleted,System.Object>(ET.ETTaskCompleted&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_UnitStop>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_SceneChangeFinish>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.ValueTuple`2<System.UInt32,System.Object>>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.UInt32>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,System.Object>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Int32>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Int64>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<UnityEngine.SceneManagement.Scene>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_CreateMyUnit>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Byte>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<System.Object,System.Object>(System.Object&,System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_CreateMyUnit>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Byte>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_UnitStop>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<ET.Client.Wait_SceneChangeFinish>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Int32>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.ValueTuple`2<System.UInt32,System.Object>>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Int64>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<UnityEngine.SceneManagement.Scene>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.Object>::Start<System.Object>(System.Object&)
-		// System.Void ET.ETAsyncTaskMethodBuilder`1<System.UInt32>::Start<System.Object>(System.Object&)
-		// ET.ETTask`1<System.Boolean> ET.ETTaskHelper::WaitAll<System.Object>(System.Collections.Generic.List`1<ET.ETTask`1<System.Object>>,ET.ETCancellationToken)
-		// System.Object ET.EventSystem::Invoke<ET.NavmeshComponent/RecastFileLoader,System.Object>(ET.NavmeshComponent/RecastFileLoader)
-		// System.Object ET.EventSystem::Invoke<ET.Server.RobotInvokeArgs,System.Object>(System.Int32,ET.Server.RobotInvokeArgs)
-		// System.Void ET.EventSystem::Publish<ET.EventType.AfterCreateClientScene>(ET.Scene,ET.EventType.AfterCreateClientScene)
-		// System.Void ET.EventSystem::Publish<ET.EventType.AfterUnitCreate>(ET.Scene,ET.EventType.AfterUnitCreate)
-		// System.Void ET.EventSystem::Publish<ET.EventType.EnterMapFinish>(ET.Scene,ET.EventType.EnterMapFinish)
-		// System.Void ET.EventSystem::Publish<ET.EventType.ChangeRotation>(ET.Scene,ET.EventType.ChangeRotation)
-		// System.Void ET.EventSystem::Publish<ET.EventType.SceneChangeFinish>(ET.Scene,ET.EventType.SceneChangeFinish)
-		// System.Void ET.EventSystem::Publish<ET.Client.NetClientComponentOnRead>(ET.Scene,ET.Client.NetClientComponentOnRead)
-		// System.Void ET.EventSystem::Publish<ET.Server.EventType.UnitEnterSightRange>(ET.Scene,ET.Server.EventType.UnitEnterSightRange)
-		// System.Void ET.EventSystem::Publish<ET.EventType.ChangePosition>(ET.Scene,ET.EventType.ChangePosition)
-		// System.Void ET.EventSystem::Publish<ET.EventType.NumbericChange>(ET.Scene,ET.EventType.NumbericChange)
-		// System.Void ET.EventSystem::Publish<ET.EventType.AfterCreateCurrentScene>(ET.Scene,ET.EventType.AfterCreateCurrentScene)
-		// System.Void ET.EventSystem::Publish<ET.EventType.MoveStart>(ET.Scene,ET.EventType.MoveStart)
-		// System.Void ET.EventSystem::Publish<ET.EventType.MoveStop>(ET.Scene,ET.EventType.MoveStop)
-		// System.Void ET.EventSystem::Publish<ET.Server.NetServerComponentOnRead>(ET.Scene,ET.Server.NetServerComponentOnRead)
-		// System.Void ET.EventSystem::Publish<ET.EventType.SceneChangeStart>(ET.Scene,ET.EventType.SceneChangeStart)
-		// System.Void ET.EventSystem::Publish<ET.Server.EventType.UnitLeaveSightRange>(ET.Scene,ET.Server.EventType.UnitLeaveSightRange)
-		// System.Void ET.EventSystem::Publish<ET.Server.NetInnerComponentOnRead>(ET.Scene,ET.Server.NetInnerComponentOnRead)
-		// ET.ETTask ET.EventSystem::PublishAsync<ET.EventType.AppStartInitFinish>(ET.Scene,ET.EventType.AppStartInitFinish)
-		// ET.ETTask ET.EventSystem::PublishAsync<ET.EventType.LoginFinish>(ET.Scene,ET.EventType.LoginFinish)
-		// ET.ETTask ET.EventSystem::PublishAsync<ET.EventType.EntryEvent3>(ET.Scene,ET.EventType.EntryEvent3)
-		// ET.ETTask ET.EventSystem::PublishAsync<ET.EventType.EntryEvent2>(ET.Scene,ET.EventType.EntryEvent2)
-		// ET.ETTask ET.EventSystem::PublishAsync<ET.EventType.EntryEvent1>(ET.Scene,ET.EventType.EntryEvent1)
-		// System.Object ET.Game::AddSingleton<System.Object>()
-		// System.Object ET.JsonHelper::FromJson<System.Object>(System.String)
-		// System.Object ET.MongoHelper::Deserialize<System.Object>(System.Byte[])
-		// System.Void ET.ObjectHelper::Swap<System.Object>(System.Object&,System.Object&)
-		// System.Void ET.RandomGenerator::BreakRank<System.Object>(System.Collections.Generic.List`1<System.Object>)
-		// System.String ET.StringHelper::ArrayToString<System.Single>(System.Single[])
-		// System.Byte[] MongoDB.Bson.BsonExtensionMethods::ToBson<System.Object>(System.Object,MongoDB.Bson.Serialization.IBsonSerializer`1<System.Object>,MongoDB.Bson.IO.BsonBinaryWriterSettings,System.Action`1<MongoDB.Bson.Serialization.BsonSerializationContext/Builder>,MongoDB.Bson.Serialization.BsonSerializationArgs)
-		// System.Threading.Tasks.Task`1<System.Object> MongoDB.Driver.IAsyncCursorExtensions::FirstOrDefaultAsync<System.Object>(MongoDB.Driver.IAsyncCursor`1<System.Object>,System.Threading.CancellationToken)
-		// System.Threading.Tasks.Task`1<MongoDB.Driver.IAsyncCursor`1<System.Object>> MongoDB.Driver.IMongoCollectionExtensions::FindAsync<System.Object>(MongoDB.Driver.IMongoCollection`1<System.Object>,System.Linq.Expressions.Expression`1<System.Func`2<System.Object,System.Boolean>>,MongoDB.Driver.FindOptions`2<System.Object,System.Object>,System.Threading.CancellationToken)
-		// System.Threading.Tasks.Task`1<MongoDB.Driver.ReplaceOneResult> MongoDB.Driver.IMongoCollectionExtensions::ReplaceOneAsync<System.Object>(MongoDB.Driver.IMongoCollection`1<System.Object>,System.Linq.Expressions.Expression`1<System.Func`2<System.Object,System.Boolean>>,System.Object,MongoDB.Driver.ReplaceOptions,System.Threading.CancellationToken)
-		// MongoDB.Driver.IMongoCollection`1<System.Object> MongoDB.Driver.IMongoDatabase::GetCollection<System.Object>(System.String,MongoDB.Driver.MongoCollectionSettings)
-		// ET.Client.Wait_CreateMyUnit System.Activator::CreateInstance<ET.Client.Wait_CreateMyUnit>()
-		// ET.Client.Wait_SceneChangeFinish System.Activator::CreateInstance<ET.Client.Wait_SceneChangeFinish>()
-		// ET.Client.Wait_UnitStop System.Activator::CreateInstance<ET.Client.Wait_UnitStop>()
-		// System.Object System.Activator::CreateInstance<System.Object>()
-		// ET.RpcInfo[] System.Linq.Enumerable::ToArray<ET.RpcInfo>(System.Collections.Generic.IEnumerable`1<ET.RpcInfo>)
-		// System.Object[] System.Linq.Enumerable::ToArray<System.Object>(System.Collections.Generic.IEnumerable`1<System.Object>)
-		// System.Linq.Expressions.Expression`1<System.Object> System.Linq.Expressions.Expression::Lambda<System.Object>(System.Linq.Expressions.Expression,System.Linq.Expressions.ParameterExpression[])
-		// System.Threading.Tasks.Task`1<System.Object> System.Threading.Tasks.TaskFactory::StartNew<System.Object>(System.Func`1<System.Object>,System.Threading.CancellationToken)
-		// System.Object UnityEngine.GameObject::GetComponent<System.Object>()
-		// System.Object UnityEngine.Object::Instantiate<System.Object>(System.Object,UnityEngine.Transform,System.Boolean)
-		// System.Object UnityEngine.Resources::Load<System.Object>(System.String)
-		// System.Object YooAsset.AssetOperationHandle::GetAssetObject<System.Object>()
-		// YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetAsync<System.Object>(System.String)
-		// YooAsset.AssetOperationHandle YooAsset.YooAssets::LoadAssetSync<System.Object>(System.String)
+		// string Bright.Common.StringUtil.CollectionToString<int>(System.Collections.Generic.IEnumerable<int>)
+		// object DG.Tweening.TweenSettingsExtensions.SetEase<object>(object,DG.Tweening.Ease)
+		// object DG.Tweening.TweenSettingsExtensions.SetUpdate<object>(object,bool)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<ET.ETTaskCompleted,object>(ET.ETTaskCompleted&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<System.ValueTuple<uint,uint>>,object>(System.Runtime.CompilerServices.TaskAwaiter<System.ValueTuple<uint,uint>>&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<object>,object>(System.Runtime.CompilerServices.TaskAwaiter<object>&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_CreateMyUnit>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_SceneChangeFinish>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_UnitStop>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<System.ValueTuple<uint,object>>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<UnityEngine.SceneManagement.Scene>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<int>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<object>,object>(System.Runtime.CompilerServices.TaskAwaiter<object>&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<uint>.AwaitUnsafeOnCompleted<object,object>(object&,object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_CreateMyUnit>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_SceneChangeFinish>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<ET.Client.Wait_UnitStop>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<System.ValueTuple<uint,object>>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<UnityEngine.SceneManagement.Scene>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<byte>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<int>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<object>.Start<object>(object&)
+		// System.Void ET.ETAsyncTaskMethodBuilder<uint>.Start<object>(object&)
+		// object ET.Entity.AddChild<object,int>(int,bool)
+		// object ET.Entity.AddChild<object,object>(object,bool)
+		// object ET.Entity.AddChild<object>(bool)
+		// object ET.Entity.AddChildWithId<object,int>(long,int,bool)
+		// object ET.Entity.AddComponent<object,System.Net.Sockets.AddressFamily>(System.Net.Sockets.AddressFamily,bool)
+		// object ET.Entity.AddComponent<object,byte>(byte,bool)
+		// object ET.Entity.AddComponent<object,object,int>(object,int,bool)
+		// object ET.Entity.AddComponent<object,object>(object,bool)
+		// object ET.Entity.AddComponent<object>(bool)
+		// object ET.Entity.GetChild<object>(long)
+		// object ET.Entity.GetComponent<object>()
+		// object ET.Entity.GetParent<object>()
+		// System.Void ET.Entity.RemoveComponent<object>()
+		// object ET.EventSystem.Invoke<ET.NavmeshComponent.RecastFileLoader,object>(ET.NavmeshComponent.RecastFileLoader)
+		// System.Void ET.EventSystem.Publish<object,ET.Client.NetClientComponentOnRead>(object,ET.Client.NetClientComponentOnRead)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.AfterCreateCurrentScene>(object,ET.EventType.AfterCreateCurrentScene)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.AfterSweetCreate>(object,ET.EventType.AfterSweetCreate)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.AfterUnitCreate>(object,ET.EventType.AfterUnitCreate)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.ChangePosition>(object,ET.EventType.ChangePosition)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.ChangeRotation>(object,ET.EventType.ChangeRotation)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.CurrentDragTimeChange>(object,ET.EventType.CurrentDragTimeChange)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.CurrentTurnChange>(object,ET.EventType.CurrentTurnChange)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.EnterMapFinish>(object,ET.EventType.EnterMapFinish)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.MoveStart>(object,ET.EventType.MoveStart)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.MoveStop>(object,ET.EventType.MoveStop)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.NumbericChange>(object,ET.EventType.NumbericChange)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.OnPatchDownloadProgress>(object,ET.EventType.OnPatchDownloadProgress)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.OnPatchDownlodFailed>(object,ET.EventType.OnPatchDownlodFailed)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SceneChangeFinish>(object,ET.EventType.SceneChangeFinish)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SceneChangeStart>(object,ET.EventType.SceneChangeStart)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.ScreenResolutionChange>(object,ET.EventType.ScreenResolutionChange)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.StageCanOperate>(object,ET.EventType.StageCanOperate)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.StageStartMatch>(object,ET.EventType.StageStartMatch)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SweetChangePosition>(object,ET.EventType.SweetChangePosition)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SweetMoveStart>(object,ET.EventType.SweetMoveStart)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SweetMoveStop>(object,ET.EventType.SweetMoveStop)
+		// System.Void ET.EventSystem.Publish<object,ET.EventType.SwitchLanguage>(object,ET.EventType.SwitchLanguage)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.AfterCreateClientScene>(object,ET.EventType.AfterCreateClientScene)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.AfterSweetCreate>(object,ET.EventType.AfterSweetCreate)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.ClearSweet>(object,ET.EventType.ClearSweet)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.Combo>(object,ET.EventType.Combo)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.EntryEvent1>(object,ET.EventType.EntryEvent1)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.EntryEvent3>(object,ET.EventType.EntryEvent3)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.LoginFinish>(object,ET.EventType.LoginFinish)
+		// ET.ETTask ET.EventSystem.PublishAsync<object,ET.EventType.ReFillAll>(object,ET.EventType.ReFillAll)
+		// object ET.Game.AddSingleton<object>()
+		// object ET.JsonHelper.FromJson<object>(string)
+		// System.Void ET.RandomGenerator.BreakRank<object>(System.Collections.Generic.List<object>)
+		// string ET.StringHelper.ArrayToString<float>(float[])
+		// ET.Client.Wait_CreateMyUnit System.Activator.CreateInstance<ET.Client.Wait_CreateMyUnit>()
+		// ET.Client.Wait_SceneChangeFinish System.Activator.CreateInstance<ET.Client.Wait_SceneChangeFinish>()
+		// ET.Client.Wait_UnitStop System.Activator.CreateInstance<ET.Client.Wait_UnitStop>()
+		// ET.RpcInfo[] System.Linq.Enumerable.ToArray<ET.RpcInfo>(System.Collections.Generic.IEnumerable<ET.RpcInfo>)
+		// object[] System.Linq.Enumerable.ToArray<object>(System.Collections.Generic.IEnumerable<object>)
+		// System.Threading.Tasks.Task<object> System.Threading.Tasks.TaskFactory.StartNew<object>(System.Func<object>,System.Threading.CancellationToken)
+		// object UnityEngine.GameObject.AddComponent<object>()
+		// object UnityEngine.GameObject.GetComponent<object>()
+		// object UnityEngine.GameObject.GetComponentInChildren<object>()
+		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Transform)
+		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Transform,bool)
+		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Vector3,UnityEngine.Quaternion)
+		// object UnityEngine.Object.Instantiate<object>(object,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+		// object YooAsset.AssetOperationHandle.GetAssetObject<object>()
+		// YooAsset.AssetOperationHandle YooAsset.YooAssets.LoadAssetAsync<object>(string)
+		// YooAsset.AssetOperationHandle YooAsset.YooAssets.LoadAssetSync<object>(string)
 	}
 }
