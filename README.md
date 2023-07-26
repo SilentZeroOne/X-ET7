@@ -1,4 +1,7 @@
-# X-ET 是一个融合了 ET, FairyGUI, luban, YooAsset 的缝合怪。
+# 糖果消消乐
+基于ET7.2开发的一款单机消消乐，基础玩法为点击拖拽糖果，在限定回合内达到指定积分即可通关。
+
+![运行图片](Book/runtime.png)
 
 # 运行指南
 ## 开发模式
@@ -30,49 +33,8 @@
 
 电脑上的缓存目录是 X-ET7/Unity/Sandbox，如果需要重新下载补丁可以删除这个目录。
 
----
-# HybridCLR
-1. 下载补丁的流程在热更层里，下载完DLL后会调用Game.Close()，然后重新走初始化流程载入新的DLL。旧的DLL无法卸载。
-2. Build的DLL增加了编号，这是因为HybridCLR不能重新载入同名的DLL，而且Unity编辑器里重复载入同名的DLL也会有问题。编号记录在 GlobalConfig 里。
-3. 增加了一个热更新界面。热更新界面也可以热更，在下次启动后生效。
-
----
-# FairyGUI
-### 代码生成
-使用 C# 实现了 FairyGUI 代码生成功能，和原 FairyGUI 编辑器代码生成相比有以下优点：
-1. 扩展方便，不用再去写lua插件了。
-2. 可以获取到跨包引用组件的类型，原FairyGUI编辑器生成的是GComponent。
-3. 根据控制器页面生成了枚举，方便调用。
-
-### PanelInspector 插件
-做了一个插件: PanelInspector，选中一个组件后，可以选择它的界面类型，目前有两种：主界面和公共界面。
-
-一个包里可以有多个主界面，公共界面是指在多个界面会共用的界面，参考 TestBPanel。
-
-### 使用方式
-1. FairyGUI 编辑器里只生成配置和图片，不生成代码。
-2. 在ET - BuildTool里，点击"FUI代码生成"按钮，来生成代码。
-
-### UIPackage动态管理
-基于[FairyGUI-Dynamic](https://github.com/SunHowe/FairyGUI-Dynamic/tree/hook_dynamic_support)模块，为FairyGUI的UIPackage与相关UI资源提供动态加载、卸载的功能。
-
----
-# Luban
-1. 已将 ET 自带的配置表全部修改为 Luban 的格式，配置表加载流程也做了修改。
-2. 修改了默认的代码生成模板，命名和使用方式更接近 ET 的习惯。在 ET - BuildTool里，点击"ExcelExporter" 来使用。
-
----
-# YooAsset
-1. 在 YooAssetHelper 里用 ETTask 对 YooAsset 的异步操作做了扩展。
-2. 在 MonoResComponent 里初始化。
-3. 在 ResComponentSystem 里调用了 YooAsset 加载的接口。对 Handle 做了缓存。
-4. 在 BuildEditor 里切换 PlayMode。
 
 ---
 # Reference
-1. ET: 更新至[3442e0d](https://github.com/egametang/ET/commit/3442e0dbbd781e07d952fd90d98e7d6c3d910edd)
-2. YooAsset: 更新至[1.4.12](https://github.com/tuyoogame/YooAsset/commit/e2788839586876da483729377580aa5cb8d06408)
-3. Luban: 更新至[8e68ab0](https://github.com/focus-creative-games/luban)
-4. ET-EUI: https://github.com/zzjfengqing/ET-EUI
-5. FairyGUI: https://www.fairygui.com/
-6. FairyGUI-Dynamic: https://github.com/SunHowe/FairyGUI-Dynamic
+1. X-ET: 融合了 ET, FairyGUI, luban, YooAsset https://github.com/IcePower/X-ET7
+
